@@ -769,9 +769,13 @@ def write_checksums(root: Path) -> None:
             relative = path.relative_to(root).as_posix()
             files[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
     document = {"schemaVersion": 1, "algorithm": "SHA-256", "files": files}
-    (root / "checksums.json").write_text(
-        json.dumps(document, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
+    # Keep the byte representation stable across operating systems.  The first
+    # published protocol-v2 artifacts were produced on Windows, so CRLF is the
+    # canonical newline for this generated file.  Path.write_text() with its
+    # default newline handling silently changed these bytes to LF on Linux.
+    checksum_text = json.dumps(document, ensure_ascii=False, indent=2) + "\n"
+    (root / "checksums.json").write_bytes(
+        checksum_text.replace("\n", "\r\n").encode("utf-8")
     )
 
 
@@ -812,6 +816,10 @@ def build_pack(root: Path, output: Path) -> None:
                         continue
                     relative = path.relative_to(staged_root).as_posix()
                     info = zipfile.ZipInfo(relative, date_time=(2026, 1, 1, 0, 0, 0))
+                    # ZipInfo otherwise records the host OS (DOS on Windows,
+                    # Unix on Linux) in every central-directory entry.  DOS is
+                    # the canonical value used by the published artifacts.
+                    info.create_system = 0
                     info.compress_type = zipfile.ZIP_DEFLATED
                     info.external_attr = 0o644 << 16
                     archive.writestr(info, path.read_bytes())

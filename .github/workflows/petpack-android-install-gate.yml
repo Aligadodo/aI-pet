@@ -2,6 +2,12 @@ name: PetPack Android install gate
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'petpack/PetPack-v2/**'
+      - 'android/SweetGirlfriendPetAndroid/**'
+      - '.github/workflows/petpack-android-install-gate.yml'
   pull_request:
     paths:
       - 'petpack/PetPack-v2/**'

@@ -41,6 +41,48 @@ class AndroidInstallGateTest(unittest.TestCase):
         test_apk.write_bytes(b"test")
         return archive, adb, android_project, expected_sha256
 
+    def test_default_gradle_layout_resolves_app_module_build_outputs(self) -> None:
+        android_project = self.temporary_root() / "AndroidProject"
+        android_project.mkdir()
+        (android_project / "gradle.properties").write_text(
+            "org.gradle.caching=true\n",
+            encoding="utf-8",
+        )
+
+        expected = android_project / "app" / "build" / "outputs" / "apk"
+        self.assertEqual(expected.resolve(), android_install_gate._app_apk_root(android_project))
+
+    def test_posix_build_invokes_non_executable_wrapper_through_sh(self) -> None:
+        android_project = self.temporary_root() / "AndroidProject"
+        android_project.mkdir()
+        (android_project / "gradle.properties").write_text("", encoding="utf-8")
+        wrapper = android_project / "gradlew"
+        wrapper.write_text("#!/bin/sh\n", encoding="utf-8")
+        apk_root = android_project / "app" / "build" / "outputs" / "apk"
+        app_apk = apk_root / "debug" / "app-debug.apk"
+        test_apk = apk_root / "androidTest" / "debug" / "app-debug-androidTest.apk"
+        app_apk.parent.mkdir(parents=True)
+        test_apk.parent.mkdir(parents=True)
+        app_apk.write_bytes(b"app")
+        test_apk.write_bytes(b"test")
+
+        commands: list[list[str]] = []
+
+        def fake_run(command, *, timeout, cwd=None):
+            del timeout, cwd
+            commands.append(list(command))
+            return ""
+
+        with (
+            mock.patch.object(android_install_gate.os, "name", "posix"),
+            mock.patch.object(android_install_gate, "_run", side_effect=fake_run),
+        ):
+            actual = android_install_gate._build_test_apks(android_project)
+
+        self.assertEqual((app_apk.resolve(), test_apk.resolve()), actual)
+        self.assertEqual("sh", commands[0][0])
+        self.assertEqual(str(wrapper), commands[0][1])
+
     @staticmethod
     def fake_runner(
         commands: list[list[str]],

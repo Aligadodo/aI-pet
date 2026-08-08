@@ -143,21 +143,24 @@ def _run_vivo_scanner_compatibility_gate(adb_command: Sequence[str]) -> None:
         )
 
 
-def _external_build_root(android_project: Path) -> Path:
+def _app_apk_root(android_project: Path) -> Path:
+    """Resolve app APK output for both redirected and standard Gradle layouts."""
     properties = android_project / "gradle.properties"
     for line in properties.read_text(encoding="utf-8").splitlines():
         if line.startswith("externalBuildRoot="):
-            return (android_project / line.split("=", 1)[1].strip()).resolve()
-    return (android_project / "build").resolve()
+            external_root = (android_project / line.split("=", 1)[1].strip()).resolve()
+            return external_root / "app" / "outputs" / "apk"
+    return (android_project / "app" / "build" / "outputs" / "apk").resolve()
 
 
 def _build_test_apks(android_project: Path) -> tuple[Path, Path]:
     wrapper = android_project / ("gradlew.bat" if os.name == "nt" else "gradlew")
     if not wrapper.is_file():
         raise GateFailure(f"Gradle wrapper not found: {wrapper}")
+    wrapper_command = [str(wrapper)] if os.name == "nt" else ["sh", str(wrapper)]
     _run(
-        [
-            str(wrapper),
+        wrapper_command
+        + [
             "--no-daemon",
             ":app:assembleDebug",
             ":app:assembleDebugAndroidTest",
@@ -166,7 +169,7 @@ def _build_test_apks(android_project: Path) -> tuple[Path, Path]:
         timeout=600,
         cwd=android_project,
     )
-    root = _external_build_root(android_project) / "app" / "outputs" / "apk"
+    root = _app_apk_root(android_project)
     app_apk = root / "debug" / "app-debug.apk"
     test_apk = root / "androidTest" / "debug" / "app-debug-androidTest.apk"
     if not app_apk.is_file() or not test_apk.is_file():
@@ -198,7 +201,7 @@ def run_android_install_gate(
             "pass --allow-physical-device to authorize it explicitly."
         )
 
-    build_root = _external_build_root(android_project) / "app" / "outputs" / "apk"
+    build_root = _app_apk_root(android_project)
     if skip_build:
         app_apk = build_root / "debug" / "app-debug.apk"
         test_apk = build_root / "androidTest" / "debug" / "app-debug-androidTest.apk"

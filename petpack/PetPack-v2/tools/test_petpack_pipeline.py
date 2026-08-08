@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -89,6 +90,34 @@ class PetPackPipelineTest(unittest.TestCase):
         petpack.build_pack(pack, second)
         self.assertEqual(before, tree_hash(pack))
         self.assertEqual(first.read_bytes(), second.read_bytes())
+
+    def test_generated_checksums_have_canonical_crlf_bytes(self) -> None:
+        pack = self.initialized_pack()
+        checksum_bytes = (pack / "checksums.json").read_bytes()
+        self.assertIn(b"\r\n", checksum_bytes)
+        self.assertNotIn(b"\r\r\n", checksum_bytes)
+        self.assertEqual(0, checksum_bytes.replace(b"\r\n", b"").count(b"\n"))
+
+    def test_archive_metadata_uses_canonical_host_system(self) -> None:
+        pack = self.initialized_pack()
+        output = self.temporary_path("metadata.petpack")
+
+        real_zip_info = zipfile.ZipInfo
+
+        class UnixDefaultZipInfo(real_zip_info):
+            def __init__(self, *args: object, **kwargs: object) -> None:
+                super().__init__(*args, **kwargs)
+                self.create_system = 3
+
+        # Reproduce ZipInfo's Linux default even when this test runs on Windows.
+        with mock.patch.object(zipfile, "ZipInfo", UnixDefaultZipInfo):
+            petpack.build_pack(pack, output)
+        with zipfile.ZipFile(output) as archive:
+            self.assertTrue(archive.infolist())
+            for info in archive.infolist():
+                self.assertEqual(0, info.create_system, info.filename)
+                self.assertEqual((2026, 1, 1, 0, 0, 0), info.date_time, info.filename)
+                self.assertEqual(0o644 << 16, info.external_attr, info.filename)
 
     def test_failed_build_preserves_existing_output(self) -> None:
         pack = self.initialized_pack()
