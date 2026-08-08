@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "intakeId": null,
+  "revision": 1,
+  "status": "collecting",
+  "locales": ["zh-CN"],
+  "voiceGuide": {
+    "identityNeutral": true,
+    "traits": [],
+    "formOfAddress": null,
+    "contentRating": "general",
+    "avoid": []
+  },
+  "runtimeVocabulary": {
+    "allowedPlaceholders": ["city", "date", "hour", "temperature", "weather", "weekday"],
+    "dialogueConditionKeys": [
+      "hourStart",
+      "hourEnd",
+      "dayOfWeek",
+      "chance",
+      "weatherEquals",
+      "weatherIn",
+      "temperatureMin",
+      "temperatureMax",
+      "settingKey",
+      "settingEquals"
+    ],
+    "taskConditionKeys": ["hourStart", "hourEnd", "weatherIn"]
+  },
+  "dialoguePools": [
+    {"event": "idle", "targetLineCount": 14, "themeRequired": false},
+    {"event": "tap", "targetLineCount": 12, "themeRequired": false},
+    {"event": "double_tap", "targetLineCount": 8, "themeRequired": false},
+    {"event": "morning", "targetLineCount": 8, "themeRequired": false},
+    {"event": "lunch", "targetLineCount": 6, "themeRequired": false},
+    {"event": "evening", "targetLineCount": 8, "themeRequired": false},
+    {"event": "late_night", "targetLineCount": 8, "themeRequired": false},
+    {"event": "weather", "targetLineCount": 8, "themeRequired": false}
+  ],
+  "dialogueRules": [],
+  "taskArchetypes": [
+    {
+      "planId": "wellbeing-break",
+      "runtimeTaskId": null,
+      "purpose": "A low-pressure rest or hydration reminder",
+      "actionRefs": ["idle", "wave"],
+      "targetOptionCount": 2,
+      "when": null
+    },
+    {
+      "planId": "photo-invite",
+      "runtimeTaskId": null,
+      "purpose": "Invite a short photo-pose interaction",
+      "actionRefs": ["photo_pose", "wave"],
+      "targetOptionCount": 3,
+      "when": null
+    },
+    {
+      "planId": "motion-invite",
+      "runtimeTaskId": null,
+      "purpose": "Offer walking or running without blocking user work",
+      "actionRefs": ["walk", "run", "idle"],
+      "targetOptionCount": 3,
+      "when": null
+    },
+    {
+      "planId": "game-mode-invite",
+      "runtimeTaskId": null,
+      "purpose": "Offer one declared game mode with a clear cancel option",
+      "actionRefs": ["walk", "run", "idle"],
+      "targetOptionCount": 2,
+      "when": null
+    },
+    {
+      "planId": "theme-task-01",
+      "runtimeTaskId": null,
+      "purpose": null,
+      "actionRefs": ["theme_action_01", "idle"],
+      "targetOptionCount": 3,
+      "when": null
+    },
+    {
+      "planId": "theme-task-02",
+      "runtimeTaskId": null,
+      "purpose": null,
+      "actionRefs": ["theme_action_02", "idle"],
+      "targetOptionCount": 3,
+      "when": null
+    }
+  ],
+  "settingsPlan": [],
+  "gameKitPlan": {
+    "required": true,
+    "supportedModes": [
+      "GRAVITY",
+      "BORDER_WALK",
+      "BORDER_RUN",
+      "HIDE_SEEK",
+      "BOMBER",
+      "SNAKE"
+    ],
+    "avatar": {
+      "sourceRef": null,
+      "crop": null,
+      "shape": "circle"
+    },
+    "accentColor": null,
+    "foodColor": null,
+    "bombColor": null
+  },
+  "extensionsPlan": [
+    {"id": "io.sweetpet.pack-settings", "required": false, "status": "planning"},
+    {"id": "io.sweetpet.dialogue-rules", "required": false, "status": "planning"},
+    {"id": "io.sweetpet.game-kit", "required": true, "status": "planning"}
+  ],
+  "coverageMatrix": [],
+  "referenceMatrix": [],
+  "randomnessPolicy": {
+    "avoidImmediateRepeat": true,
+    "minimumBasePoolLines": 6,
+    "conditionalClaimsMustBeRouted": true
+  },
+  "duplicatePolicy": {
+    "exactDuplicatesAllowed": false,
+    "nearDuplicatesRequireReview": true
+  },
+  "safetyNotes": []
+}

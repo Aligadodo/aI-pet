@@ -3,7 +3,7 @@ SweetGirlfriendDesktopPet third-party notices
 
 The Windows runtime archives include dynamically linked third-party runtime
 components. They remain subject to their own licenses. This notice and the
-license texts in the accompanying THIRD_PARTY_LICENSES directory must remain
+license texts in the accompanying `licenses` directory must remain
 with redistributed runtime archives.
 
 PySide6 / Shiboken6 / Qt 6

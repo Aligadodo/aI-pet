@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "paths": {
+    "android": "android/SweetGirlfriendPetAndroid",
+    "desktop": "desktop/SweetGirlfriendDesktopPet",
+    "petpack": "petpack/PetPack-v2",
+    "outputRoot": "outputs/pipeline"
+  },
+  "versions": {
+    "android": "0.5.4",
+    "desktop": "1.2.4"
+  },
+  "profiles": {
+    "quick": [
+      "petpack-qa",
+      "android-test",
+      "desktop-audit"
+    ],
+    "ci": [
+      "petpack-qa",
+      "android-test",
+      "desktop-test"
+    ],
+    "full": [
+      "petpack-candidate",
+      "android-build",
+      "desktop-build"
+    ],
+    "release": [
+      "petpack-publish",
+      "android-build",
+      "desktop-build"
+    ]
+  },
+  "packs": {
+    "girlfriend-classic": {
+      "path": "packs/girlfriend-classic",
+      "qaByDefault": false,
+      "acceptedWarnings": []
+    },
+    "jk-beach-summer": {
+      "path": "packs/jk-beach-summer",
+      "qaByDefault": true,
+      "acceptedWarnings": [
+        {
+          "code": "copy.duplicate",
+          "location": "tasks/tasks.json.tasks[0].options[1].label, tasks/tasks.json.tasks[9].options[1].label"
+        },
+        {
+          "code": "copy.duplicate",
+          "location": "tasks/tasks.json.tasks[5].options[2].label, tasks/tasks.json.tasks[17].options[2].label"
+        },
+        {
+          "code": "frame.size-pop",
+          "location": "photo_pose"
+        },
+        {
+          "code": "frame.size-pop",
+          "location": "shell_pick"
+        }
+      ]
+    }
+  }
+}

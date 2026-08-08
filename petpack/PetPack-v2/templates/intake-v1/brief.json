@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "intakeId": null,
+  "revision": 1,
+  "status": "collecting",
+  "request": {
+    "productGoal": null,
+    "themeTags": [],
+    "audience": "general",
+    "localeTargets": ["zh-CN"],
+    "toneTraits": [],
+    "desiredCapabilities": [
+      "animation",
+      "dialogue",
+      "behavior",
+      "tasks",
+      "game-modes"
+    ],
+    "desiredGameModes": [
+      "GRAVITY",
+      "BORDER_WALK",
+      "BORDER_RUN",
+      "HIDE_SEEK",
+      "BOMBER",
+      "SNAKE"
+    ]
+  },
+  "technicalBaseline": {
+    "packClass": "full-motion",
+    "gameCompatible": true,
+    "protocol": {
+      "id": "io.sweetpet.pack",
+      "version": "2.0",
+      "minRuntime": "0.5.0"
+    },
+    "canvas": [512, 512],
+    "pixelMode": "RGBA",
+    "requiredActions": [
+      "idle",
+      "walk",
+      "run",
+      "wave",
+      "photo_pose",
+      "theme_action_01",
+      "theme_action_02"
+    ]
+  },
+  "constraints": {
+    "rightsApprovalRequired": true,
+    "publicReleaseRequiresConsent": true,
+    "unsupportedDynamicContextsForbidden": true,
+    "maxTaskOptions": 4,
+    "notes": []
+  },
+  "identityLock": {
+    "status": "unresolved",
+    "selectedCandidateGroup": null,
+    "outfit": null,
+    "palette": null,
+    "proportions": null,
+    "camera": null,
+    "defaultFacing": null,
+    "footBaseline": null,
+    "visualRevision": null
+  },
+  "packageIdentity": {
+    "packId": null,
+    "displayName": null,
+    "initialVersion": "0.1.0"
+  },
+  "openQuestions": [],
+  "decisions": [],
+  "outOfScope": []
+}

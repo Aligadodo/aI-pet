@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "intakeId": null,
+  "revision": 1,
+  "status": "collecting",
+  "basePath": "sources/raw",
+  "storagePolicy": {
+    "workspaceRelativeLocatorsOnly": true,
+    "copyRawSourcesIntoPack": false,
+    "commitRawSources": false,
+    "sha256RequiredBeforeApproval": true
+  },
+  "roleVocabulary": [
+    "identity-candidate",
+    "outfit-reference",
+    "pose-reference",
+    "motion-reference",
+    "environment-reference",
+    "prop-reference",
+    "style-reference"
+  ],
+  "coverageRequirements": {
+    "identity": [
+      "readable-face",
+      "front-or-three-quarter-view",
+      "consistent-subject"
+    ],
+    "fullMotion": [
+      "complete-head",
+      "complete-body",
+      "visible-feet",
+      "walk-phase-reference",
+      "run-phase-reference"
+    ],
+    "gameCompatible": [
+      "avatar-crop-source",
+      "left-right-facing-plan",
+      "edge-rotation-plan"
+    ]
+  },
+  "assetRecordSchema": {
+    "required": [
+      "sourceId",
+      "locator",
+      "sha256",
+      "bytes",
+      "pixelSize",
+      "roles",
+      "reviewStatus",
+      "rights"
+    ],
+    "example": {
+      "sourceId": "src-001",
+      "locator": "sources/raw/reference-001.jpg",
+      "sha256": null,
+      "bytes": null,
+      "pixelSize": [null, null],
+      "roles": ["identity-candidate", "pose-reference"],
+      "reviewStatus": "pending",
+      "rights": {
+        "status": "unverified",
+        "owner": null,
+        "consentEvidence": null,
+        "publicReleaseAllowed": false
+      }
+    }
+  },
+  "assets": []
+}

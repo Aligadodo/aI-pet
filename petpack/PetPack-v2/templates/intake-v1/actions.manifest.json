@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "intakeId": null,
+  "revision": 1,
+  "status": "collecting",
+  "baseline": {
+    "packClass": "full-motion",
+    "gameCompatible": true,
+    "canvas": [512, 512],
+    "pixelMode": "RGBA",
+    "safeMarginPx": 12,
+    "provisionalGroundAnchor": [0.5, 0.94],
+    "lockedGroundAnchor": null
+  },
+  "sharedVisualLock": {
+    "identityRevision": null,
+    "outfit": null,
+    "camera": null,
+    "headScale": null,
+    "bodyScale": null,
+    "bodyCenter": null,
+    "footBaselineY": null
+  },
+  "actions": [
+    {
+      "id": "idle",
+      "priority": "core",
+      "purpose": "Stable resting, dialogue, and fallback action",
+      "runtimeUses": ["fallback", "rest", "dialogue"],
+      "sourceRefs": [],
+      "status": "planned",
+      "productionMethod": null,
+      "frameBudget": {"min": 4, "target": 8, "max": 16},
+      "fps": 4,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": null,
+        "sceneTags": ["ground", "rest", "dialogue"]
+      },
+      "framePlan": [
+        {"poseKey": "neutral-hold", "supportFoot": "both", "airborne": false},
+        {"poseKey": "breath-in", "supportFoot": "both", "airborne": false},
+        {"poseKey": "breath-out", "supportFoot": "both", "airborne": false},
+        {"poseKey": "rare-blink-or-accent", "supportFoot": "both", "airborne": false}
+      ],
+      "continuityAcceptance": {
+        "baselineTolerancePx": 12,
+        "maxCenterJumpCanvasRatio": 0.08,
+        "maxBboxScaleDeviation": 0.15,
+        "maxAdjacentAreaRatio": 1.35,
+        "loopClosureRequired": true,
+        "edgeTouchAllowed": false,
+        "alphaCrossfadeForbidden": true
+      }
+    },
+    {
+      "id": "walk",
+      "priority": "core",
+      "purpose": "Complete readable walk cycle for free and border movement",
+      "runtimeUses": ["locomotion", "border", "pathfinding"],
+      "sourceRefs": [],
+      "status": "planned",
+      "productionMethod": null,
+      "frameBudget": {"min": 8, "target": 8, "max": 16},
+      "fps": 12,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": null,
+        "sceneTags": ["ground", "border", "pathfinding"]
+      },
+      "framePlan": [
+        {"poseKey": "left-contact", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-down", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-passing", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-up", "supportFoot": "left", "airborne": false},
+        {"poseKey": "right-contact", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-down", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-passing", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-up", "supportFoot": "right", "airborne": false}
+      ],
+      "continuityAcceptance": {
+        "baselineTolerancePx": 12,
+        "maxCenterJumpCanvasRatio": 0.08,
+        "maxBboxScaleDeviation": 0.15,
+        "maxAdjacentAreaRatio": 1.35,
+        "loopClosureRequired": true,
+        "edgeTouchAllowed": false,
+        "alphaCrossfadeForbidden": true
+      }
+    },
+    {
+      "id": "run",
+      "priority": "core",
+      "purpose": "Complete readable run cycle for fast and arcade movement",
+      "runtimeUses": ["locomotion", "border", "arcade", "pathfinding"],
+      "sourceRefs": [],
+      "status": "planned",
+      "productionMethod": null,
+      "frameBudget": {"min": 8, "target": 8, "max": 16},
+      "fps": 16,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": null,
+        "sceneTags": ["ground", "border", "arcade", "pathfinding"]
+      },
+      "framePlan": [
+        {"poseKey": "left-contact", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-compression", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-drive", "supportFoot": "left", "airborne": false},
+        {"poseKey": "left-flight", "supportFoot": null, "airborne": true},
+        {"poseKey": "right-contact", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-compression", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-drive", "supportFoot": "right", "airborne": false},
+        {"poseKey": "right-flight", "supportFoot": null, "airborne": true}
+      ],
+      "continuityAcceptance": {
+        "baselineTolerancePx": 16,
+        "maxCenterJumpCanvasRatio": 0.1,
+        "maxBboxScaleDeviation": 0.15,
+        "maxAdjacentAreaRatio": 1.4,
+        "loopClosureRequired": true,
+        "edgeTouchAllowed": false,
+        "alphaCrossfadeForbidden": true
+      }
+    },
+    {
+      "id": "wave",
+      "priority": "required",
+      "purpose": "Short greeting and task acknowledgement",
+      "runtimeUses": ["greeting", "dialogue", "task"],
+      "sourceRefs": [],
+      "status": "planned",
+      "productionMethod": null,
+      "frameBudget": {"min": 4, "target": 6, "max": 10},
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": null,
+        "sceneTags": ["ground", "dialogue", "task", "greeting"]
+      },
+      "framePlan": [
+        {"poseKey": "neutral", "supportFoot": "both", "airborne": false},
+        {"poseKey": "hand-rise", "supportFoot": "both", "airborne": false},
+        {"poseKey": "wave-out", "supportFoot": "both", "airborne": false},
+        {"poseKey": "wave-in", "supportFoot": "both", "airborne": false},
+        {"poseKey": "wave-out-repeat", "supportFoot": "both", "airborne": false},
+        {"poseKey": "settle", "supportFoot": "both", "airborne": false}
+      ],
+      "continuityAcceptance": {
+        "baselineTolerancePx": 12,
+        "maxCenterJumpCanvasRatio": 0.08,
+        "maxBboxScaleDeviation": 0.15,
+        "maxAdjacentAreaRatio": 1.35,
+        "loopClosureRequired": false,
+        "edgeTouchAllowed": false,
+        "alphaCrossfadeForbidden": true
+      }
+    },
+    {
+      "id": "photo_pose",
+      "priority": "required",
+      "purpose": "Camera-friendly social pose with a readable final hold",
+      "runtimeUses": ["photo", "dialogue", "task"],
+      "sourceRefs": [],
+      "status": "planned",
+      "productionMethod": null,
+      "frameBudget": {"min": 4, "target": 6, "max": 10},
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": null,
+        "sceneTags": ["ground", "dialogue", "task", "photo"]
+      },
+      "framePlan": [
+        {"poseKey": "prepare", "supportFoot": "both", "airborne": false},
+        {"poseKey": "pose-enter", "supportFoot": "both", "airborne": false},
+        {"poseKey": "pose-hold-a", "supportFoot": "both", "airborne": false},
+        {"poseKey": "pose-hold-b", "supportFoot": "both", "airborne": false},
+        {"poseKey": "smile-accent", "supportFoot": "both", "airborne": false},
+        {"poseKey": "settle", "supportFoot": "both", "airborne": false}
+      ],
+      "continuityAcceptance": {
+        "baselineTolerancePx": 12,
+        "maxCenterJumpCanvasRatio": 0.08,
+        "maxBboxScaleDeviation": 0.15,
+        "maxAdjacentAreaRatio": 1.35,
+        "loopClosureRequired": false,
+        "edgeTouchAllowed": false,
+        "alphaCrossfadeForbidden": true
+      }
+    },
+    {
+      "id": "theme_action_01",
+      "priority": "themed",
+      "purpose": null,
+      "runtimeUses": ["dialogue", "task", "theme"],
+      "sourceRefs": [],
+      "status": "theme-pending",
+      "productionMethod": null,
+      "frameBudget": {"min": 4, "target": 6, "max": 12},
+      "fps": null,
+      "loop": null,
+      "motion": {
+        "defaultFacing": null,
+        "supportsHorizontalMirror": null,
+        "rotationPolicy": null,
+        "groundAnchor": null,
+        "sceneTags": ["theme"]
+      },
+      "framePlan": [],
+      "continuityAcceptance": null
+    },
+    {
+      "id": "theme_action_02",
+      "priority": "themed",
+      "purpose": null,
+      "runtimeUses": ["dialogue", "task", "theme"],
+      "sourceRefs": [],
+      "status": "theme-pending",
+      "productionMethod": null,
+      "frameBudget": {"min": 4, "target": 6, "max": 12},
+      "fps": null,
+      "loop": null,
+      "motion": {
+        "defaultFacing": null,
+        "supportsHorizontalMirror": null,
+        "rotationPolicy": null,
+        "groundAnchor": null,
+        "sceneTags": ["theme"]
+      },
+      "framePlan": [],
+      "continuityAcceptance": null
+    }
+  ]
+}
