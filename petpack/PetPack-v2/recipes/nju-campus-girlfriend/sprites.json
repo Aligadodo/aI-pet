@@ -1,0 +1,179 @@
+{
+  "canvas": 512,
+  "groundY": 481,
+  "outputRoot": "../../packs/nju-campus-girlfriend/character/animations",
+  "report": "../../work/nju-campus-production/reports/sprite-build-report.json",
+  "previewAction": "photo_pose",
+  "previewFrame": 1,
+  "previewPath": "../../packs/nju-campus-girlfriend/preview.png",
+  "sheets": {
+    "walk": {
+      "path": "../../work/nju-campus-production/sheets/walk-final.png",
+      "rows": 2,
+      "cols": 4,
+      "edgeClearPx": 1,
+      "paddingPx": 16
+    },
+    "run": {
+      "path": "../../work/nju-campus-production/sheets/run-final.png",
+      "rows": 2,
+      "cols": 4,
+      "edgeClearPx": 1,
+      "paddingPx": 16
+    },
+    "idle_rest_sleep": {
+      "path": "../../work/nju-campus-production/sheets/idle-rest-sleep.png",
+      "rows": 3,
+      "cols": 4,
+      "overlapPx": 52,
+      "edgeClearPx": 1,
+      "componentGapPx": 24,
+      "paddingPx": 16
+    },
+    "social_a": {
+      "path": "../../work/nju-campus-production/sheets/social-a.png",
+      "rows": 4,
+      "cols": 4,
+      "overlapPx": 40,
+      "edgeClearPx": 1,
+      "componentGapPx": 24,
+      "paddingPx": 16
+    },
+    "social_b": {
+      "path": "../../work/nju-campus-production/sheets/social-b.png",
+      "rows": 4,
+      "cols": 4,
+      "overlapPx": 40,
+      "edgeClearPx": 1,
+      "componentGapPx": 48,
+      "componentCloseGapPx": 2,
+      "paddingPx": 16
+    },
+    "autumn_leaf": {
+      "path": "../../work/nju-campus-production/sheets/autumn-leaf-final.png",
+      "rows": 1,
+      "cols": 4,
+      "edgeClearPx": 1,
+      "paddingPx": 16
+    },
+    "gift_hold": {
+      "path": "../../work/nju-campus-production/sheets/gift-hold-final.png",
+      "rows": 1,
+      "cols": 4,
+      "edgeClearPx": 1,
+      "paddingPx": 16
+    }
+  },
+  "actions": [
+    {
+      "id": "idle",
+      "sheet": "idle_rest_sleep",
+      "row": 0,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [-33, -40, -6, -4]
+    },
+    {
+      "id": "walk",
+      "sheet": "walk",
+      "cells": [0, 1, 2, 3, 4, 5, 6, 7],
+      "supportFrames": [0, 1, 2, 3, 4, 5, 6, 7],
+      "lockAllToGround": true,
+      "alignBoundsCenterX": true,
+      "frameOffsetX": [12, 6, 11, 6, 2, 5, 11, 7]
+    },
+    {
+      "id": "run",
+      "sheet": "run",
+      "cells": [0, 1, 2, 3, 4, 5, 6, 7],
+      "supportFrames": [0, 1, 2, 4, 5, 6],
+      "lockAllToGround": false,
+      "alignBoundsCenterX": true,
+      "frameOffsetX": [-4, -6, -14, -13, -3, -6, -7, -14],
+      "maxAirGapPx": 12
+    },
+    {
+      "id": "wave",
+      "sheet": "social_a",
+      "row": 0,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [8, -7, 22, -13],
+      "frameScale": [1.10, 1.09, 1.15, 1.15]
+    },
+    {
+      "id": "photo_pose",
+      "sheet": "social_a",
+      "cells": [5, 6],
+      "supportFrames": [0, 1],
+      "lockAllToGround": true,
+      "alignBoundsCenterX": true,
+      "frameScale": [1.10, 1.23]
+    },
+    {
+      "id": "autumn_leaf",
+      "sheet": "autumn_leaf",
+      "row": 0,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true
+    },
+    {
+      "id": "chalk_explain",
+      "sheet": "social_b",
+      "row": 0,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [-37, 7, 8, -14]
+    },
+    {
+      "id": "gift_hold",
+      "sheet": "gift_hold",
+      "row": 0,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true
+    },
+    {
+      "id": "grass_rest",
+      "sheet": "idle_rest_sleep",
+      "row": 1,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [-9, -16, 29, 20]
+    },
+    {
+      "id": "glasses_adjust",
+      "sheet": "social_a",
+      "row": 3,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [11, -6, 17, 5],
+      "frameScale": [1.16, 1.14, 1.09, 1.16]
+    },
+    {
+      "id": "flower_spot",
+      "sheet": "social_b",
+      "row": 2,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [-66, -37, -41, -42]
+    },
+    {
+      "id": "jump_celebrate",
+      "sheet": "social_b",
+      "row": 3,
+      "supportFrames": [0, 3],
+      "lockAllToGround": false,
+      "alignBoundsCenterX": true,
+      "frameScale": [0.98, 1.20, 1.26, 1.06],
+      "maxAirGapPx": 40
+    },
+    {
+      "id": "sleep",
+      "sheet": "idle_rest_sleep",
+      "row": 2,
+      "supportFrames": [0, 1, 2, 3],
+      "lockAllToGround": true,
+      "frameOffsetX": [-30, -32, 26, 8]
+    }
+  ]
+}

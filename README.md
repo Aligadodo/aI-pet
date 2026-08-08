@@ -5,7 +5,7 @@
 ## 仓库结构
 
 - `desktop/SweetGirlfriendDesktopPet`：Windows 桌面端 v1.2.4 权威源码与动作资源。
-- `android/SweetGirlfriendPetAndroid`：Android v0.5.5 权威源码。目录沿用早期工作区名称，但应用版本以 Gradle 配置为准。
+- `android/SweetGirlfriendPetAndroid`：Android v0.5.6 权威源码。目录沿用早期工作区名称，但应用版本以 Gradle 配置为准。
 - `petpack/PetPack-v2`：PetPack v2 协议、schema、模板、制作/质量门禁工具、资源包源码与正式 QA 报告。
 - `docs`：发布架构和制品索引。
 
@@ -73,9 +73,9 @@ py -m venv .venv
 
 ## 发布状态
 
-- Android：v0.5.5，`versionCode 10`，用于当前测试迭代的 APK 为 Android Debug 签名，并内置经典汉服、JK 海边夏日和南大校园三套资源包。
+- Android：v0.5.6，`versionCode 11`，用于当前测试迭代的 APK 为 Android Debug 签名，并内置经典汉服、JK 海边夏日和南大校园三套资源包。
 - Windows：v1.2.4。
-- PetPack：`girlfriend-classic` v1.2.1、`jk-beach-summer` v1.0.0、`nju-campus-girlfriend` v1.0.0。
+- PetPack：`girlfriend-classic` v1.2.1、`jk-beach-summer` v1.0.0、`nju-campus-girlfriend` v1.0.1。
 
 本仓库不包含用户提供的原始摄影 JPG、开发机 SDK 路径、虚拟环境、构建缓存、临时复现包或签名私钥。
 

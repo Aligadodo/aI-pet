@@ -306,6 +306,48 @@ class SpriteSheetBuilderTest(unittest.TestCase):
             centers.append((bbox[0] + bbox[2]) / 2)
         self.assertLessEqual(max(centers) - min(centers), 1)
 
+    def test_per_frame_scale_and_offset_preserve_ground_and_apply_after_centering(self) -> None:
+        frames = []
+        for left in (70, 300):
+            frame = Image.new("RGBA", (512, 512), (0, 0, 0, 0))
+            ImageDraw.Draw(frame).rectangle((left, 150, left + 79, 430), fill=(180, 60, 80, 255))
+            frames.append(frame)
+
+        aligned = sprites.align_action(
+            frames,
+            ground_y=481,
+            support_frames=(0, 1),
+            lock_all_to_ground=True,
+            max_air_gap_px=None,
+            align_bounds_center_x=True,
+            frame_offset_x=(12, -18),
+            frame_scale=(1.0, 1.2),
+        )
+        bboxes = [frame.getchannel("A").getbbox() for frame in aligned]
+        self.assertTrue(all(bbox is not None for bbox in bboxes))
+        first, second = bboxes
+        assert first is not None and second is not None
+        self.assertEqual(481, first[3] - 1)
+        self.assertEqual(481, second[3] - 1)
+        self.assertAlmostEqual(268, (first[0] + first[2]) / 2, delta=1)
+        self.assertAlmostEqual(238, (second[0] + second[2]) / 2, delta=1)
+        self.assertAlmostEqual((first[3] - first[1]) * 1.2, second[3] - second[1], delta=2)
+
+    def test_per_frame_controls_are_parsed_and_require_one_value_per_cell(self) -> None:
+        payload = json.loads(self.config().read_text(encoding="utf-8"))
+        payload["actions"][0]["frameOffsetX"] = [-3, -1, 2, 4]
+        payload["actions"][0]["frameScale"] = [1.0, 1.1, 0.95, 1.2]
+        path = self.root / "per-frame.json"
+        path.write_text(json.dumps(payload), encoding="utf-8")
+        action = sprites.load_build_spec(path).actions[0]
+        self.assertEqual((-3, -1, 2, 4), action.frame_offset_x)
+        self.assertEqual((1.0, 1.1, 0.95, 1.2), action.frame_scale)
+
+        payload["actions"][0]["frameOffsetX"] = [0, 1]
+        path.write_text(json.dumps(payload), encoding="utf-8")
+        with self.assertRaisesRegex(sprites.ConfigurationError, "exactly 4"):
+            sprites.load_build_spec(path)
+
     def test_repeated_build_is_byte_deterministic(self) -> None:
         config = self.config(preview=True)
         first = sprites.build_from_config(config)
@@ -341,6 +383,10 @@ class SpriteSheetBuilderTest(unittest.TestCase):
         overlapping_output = json.loads(json.dumps(base))
         overlapping_output["report"] = overlapping_output["outputRoot"]
         cases.append(overlapping_output)
+
+        wrong_scale_count = json.loads(json.dumps(base))
+        wrong_scale_count["actions"][0]["frameScale"] = [1.0]
+        cases.append(wrong_scale_count)
 
         for index, payload in enumerate(cases):
             with self.subTest(index=index):

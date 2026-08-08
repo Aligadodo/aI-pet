@@ -237,7 +237,7 @@ internal class HttpWeatherJsonTransport : WeatherJsonTransport {
             connection.instanceFollowRedirects = true
             connection.setRequestProperty("Accept", "application/json")
             connection.setRequestProperty("Accept-Language", "zh-CN,zh;q=0.9")
-            connection.setRequestProperty("User-Agent", "SweetPet-Android/0.5.5")
+            connection.setRequestProperty("User-Agent", "SweetPet-Android/0.5.6")
             val status = connection.responseCode
             if (status !in 200..299) {
                 val retryAfterMs = connection.getHeaderField("Retry-After")

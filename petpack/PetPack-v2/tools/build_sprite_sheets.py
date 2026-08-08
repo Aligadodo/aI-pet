@@ -123,6 +123,8 @@ class ActionSpec:
     support_frames: tuple[int, ...]
     lock_all_to_ground: bool
     align_bounds_center_x: bool
+    frame_offset_x: tuple[int, ...]
+    frame_scale: tuple[float, ...]
     max_air_gap_px: int | None
 
 
@@ -450,6 +452,38 @@ def load_build_spec(
             action_data.get("alignBoundsCenterX", False),
             f"{action_label}.alignBoundsCenterX",
         )
+        raw_offsets = action_data.get("frameOffsetX", [0] * len(cells))
+        if not isinstance(raw_offsets, Sequence) or isinstance(raw_offsets, (str, bytes)):
+            raise ConfigurationError(f"{action_label}.frameOffsetX must be an integer array")
+        if len(raw_offsets) != len(cells):
+            raise ConfigurationError(
+                f"{action_label}.frameOffsetX must contain exactly {len(cells)} values"
+            )
+        frame_offset_x = tuple(
+            _as_int(value, f"{action_label}.frameOffsetX[{offset_index}]")
+            for offset_index, value in enumerate(raw_offsets)
+        )
+        if any(abs(offset) >= canvas // 2 for offset in frame_offset_x):
+            raise ConfigurationError(
+                f"{action_label}.frameOffsetX values must be between {-canvas // 2 + 1} and {canvas // 2 - 1}"
+            )
+        raw_scales = action_data.get("frameScale", [1.0] * len(cells))
+        if not isinstance(raw_scales, Sequence) or isinstance(raw_scales, (str, bytes)):
+            raise ConfigurationError(f"{action_label}.frameScale must be a number array")
+        if len(raw_scales) != len(cells):
+            raise ConfigurationError(
+                f"{action_label}.frameScale must contain exactly {len(cells)} values"
+            )
+        frame_scale = tuple(
+            _as_number(
+                value,
+                f"{action_label}.frameScale[{scale_index}]",
+                minimum=0.5,
+            )
+            for scale_index, value in enumerate(raw_scales)
+        )
+        if any(scale > 2.0 for scale in frame_scale):
+            raise ConfigurationError(f"{action_label}.frameScale values must be <= 2.0")
         raw_gap = action_data.get("maxAirGapPx")
         max_air_gap = None if raw_gap is None else _as_int(raw_gap, f"{action_label}.maxAirGapPx", minimum=0)
         if max_air_gap is not None and max_air_gap >= canvas:
@@ -462,6 +496,8 @@ def load_build_spec(
                 support_frames=support_frames,
                 lock_all_to_ground=lock_all,
                 align_bounds_center_x=align_bounds_center_x,
+                frame_offset_x=frame_offset_x,
+                frame_scale=frame_scale,
                 max_air_gap_px=max_air_gap,
             )
         )
@@ -856,7 +892,7 @@ def _translate_checked(
     shifted_bbox = (bbox[0] + dx, bbox[1] + dy, bbox[2] + dx, bbox[3] + dy)
     if shifted_bbox[0] <= 0 or shifted_bbox[1] <= 0 or shifted_bbox[2] >= canvas or shifted_bbox[3] >= canvas:
         raise ValueError(
-            f"{label} would lose its transparent edge after y translation {dy}: {shifted_bbox}"
+            f"{label} would lose its transparent edge after translation ({dx}, {dy}): {shifted_bbox}"
         )
     shifted = Image.new("RGBA", (canvas, canvas), (0, 0, 0, 0))
     shifted.alpha_composite(frame, (dx, dy))
@@ -869,6 +905,40 @@ def _align_bounds_center_x(frame: Image.Image, *, canvas: int, label: str) -> Im
     return _translate_checked(frame, 0, canvas=canvas, label=label, dx=dx)
 
 
+def _scale_about_bbox_bottom(
+    frame: Image.Image,
+    scale: float,
+    *,
+    canvas: int,
+    label: str,
+) -> Image.Image:
+    """Scale one pose around its visible horizontal centre and bottom edge.
+
+    Keeping the bottom edge fixed preserves authored ground contact and
+    airborne trajectories.  This is intentionally an explicit per-frame
+    correction for generated sheets whose camera distance varies between
+    cells; it is not a replacement for one common sheet transform.
+    """
+    if scale == 1.0:
+        return frame.copy()
+    bbox = _alpha_bbox(frame, label)
+    width = bbox[2] - bbox[0]
+    height = bbox[3] - bbox[1]
+    output_size = (max(1, round(width * scale)), max(1, round(height * scale)))
+    center_x = (bbox[0] + bbox[2]) / 2
+    left = round(center_x - output_size[0] / 2)
+    top = bbox[3] - output_size[1]
+    shifted_bbox = (left, top, left + output_size[0], top + output_size[1])
+    if shifted_bbox[0] <= 0 or shifted_bbox[1] <= 0 or shifted_bbox[2] >= canvas or shifted_bbox[3] >= canvas:
+        raise ValueError(
+            f"{label} would lose its transparent edge after scale {scale}: {shifted_bbox}"
+        )
+    subject = frame.crop(bbox).resize(output_size, Image.Resampling.LANCZOS)
+    scaled = Image.new("RGBA", (canvas, canvas), (0, 0, 0, 0))
+    scaled.alpha_composite(subject, (left, top))
+    return neutralize_resampled_edge_spill(scaled)
+
+
 def align_action(
     frames: Sequence[Image.Image],
     *,
@@ -877,14 +947,22 @@ def align_action(
     lock_all_to_ground: bool,
     max_air_gap_px: int | None,
     align_bounds_center_x: bool = False,
+    frame_offset_x: Sequence[int] | None = None,
+    frame_scale: Sequence[float] | None = None,
     cancel_event: threading.Event | None = None,
 ) -> list[Image.Image]:
-    """Align a grounded or airborne action without changing frame scale."""
+    """Align a grounded or airborne action, then apply explicit pose fixes."""
     if not frames:
         raise ValueError("action has no frames")
     canvas = frames[0].width
     if any(frame.size != (canvas, canvas) for frame in frames):
         raise ValueError("all action frames must use one square canvas")
+    offsets = tuple(frame_offset_x or (0,) * len(frames))
+    scales = tuple(frame_scale or (1.0,) * len(frames))
+    if len(offsets) != len(frames):
+        raise ValueError("frame_offset_x must contain one value per frame")
+    if len(scales) != len(frames):
+        raise ValueError("frame_scale must contain one value per frame")
     support_bottoms = [
         _alpha_bbox(frames[index], f"support frame {index}")[3] - 1
         for index in support_frames
@@ -936,6 +1014,18 @@ def align_action(
                 )
             aligned = clamped
 
+    # Scaling after vertical alignment lets every corrected pose retain its
+    # exact grounded or airborne bottom coordinate.
+    aligned = [
+        _scale_about_bbox_bottom(
+            frame,
+            scales[index],
+            canvas=canvas,
+            label=f"frame {index}",
+        )
+        for index, frame in enumerate(aligned)
+    ]
+
     for index, frame in enumerate(aligned):
         if frame.mode != "RGBA" or frame.size != (OUTPUT_SIZE, OUTPUT_SIZE):
             raise ValueError(f"frame {index} is not {OUTPUT_SIZE}x{OUTPUT_SIZE} RGBA")
@@ -947,6 +1037,18 @@ def align_action(
             _align_bounds_center_x(frame, canvas=canvas, label=f"frame {index}")
             for index, frame in enumerate(aligned)
         ]
+    aligned = [
+        _translate_checked(
+            frame,
+            0,
+            canvas=canvas,
+            label=f"frame {index}",
+            dx=offsets[index],
+        )
+        if offsets[index]
+        else frame
+        for index, frame in enumerate(aligned)
+    ]
     return aligned
 
 
@@ -1090,6 +1192,8 @@ def build_sprites(
             support_frames=action.support_frames,
             lock_all_to_ground=action.lock_all_to_ground,
             align_bounds_center_x=action.align_bounds_center_x,
+            frame_offset_x=action.frame_offset_x,
+            frame_scale=action.frame_scale,
             max_air_gap_px=action.max_air_gap_px,
             cancel_event=cancel_event,
         )
@@ -1162,6 +1266,8 @@ def build_sprites(
                 "supportFrames": list(action.support_frames),
                 "lockAllToGround": action.lock_all_to_ground,
                 "alignBoundsCenterX": action.align_bounds_center_x,
+                "frameOffsetX": list(action.frame_offset_x),
+                "frameScale": list(action.frame_scale),
                 "maxAirGapPx": action.max_air_gap_px,
                 "files": files,
             }
