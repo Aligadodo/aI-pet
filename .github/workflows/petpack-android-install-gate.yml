@@ -62,7 +62,8 @@ jobs:
             -camera-back none
             -camera-front none
           script: |
-            set -euo pipefail
+            # android-emulator-runner invokes this block with POSIX /bin/sh.
+            set -eu
 
             # The runner already waits for boot, but wait for one successful shell
             # round trip as well so a transient ADB reconnect cannot reach the gate.
