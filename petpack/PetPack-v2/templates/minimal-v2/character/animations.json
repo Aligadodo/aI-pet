@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "canvas": [512, 512],
+  "actions": {
+    "idle": {
+      "fps": 4,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "dialogue"]
+      },
+      "frames": ["animations/idle/frame_00.png"]
+    }
+  }
+}

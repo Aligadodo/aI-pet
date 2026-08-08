@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sweetpet.local/schema/pack-v2.json",
+  "title": "SweetPet Pack Protocol v2",
+  "type": "object",
+  "required": ["schemaVersion", "protocol", "id", "name", "version", "preview", "entrypoints"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "protocol": {
+      "type": "object",
+      "required": ["id", "version", "minRuntime"],
+      "properties": {
+        "id": { "const": "io.sweetpet.pack" },
+        "version": { "pattern": "^2\\.[0-9]+$" },
+        "minRuntime": { "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$" }
+      }
+    },
+    "id": { "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "version": { "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$" },
+    "preview": { "type": "string" },
+    "integrity": { "const": "checksums.json" },
+    "entrypoints": { "type": "object" },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "apiVersion", "entrypoint", "required"],
+        "properties": {
+          "id": { "pattern": "^[a-z0-9][a-z0-9._-]{2,95}$" },
+          "apiVersion": { "type": "integer", "minimum": 1 },
+          "entrypoint": { "type": "string" },
+          "required": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

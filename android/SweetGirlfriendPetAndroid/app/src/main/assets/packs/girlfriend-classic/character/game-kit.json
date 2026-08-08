@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "avatar": {
+    "source": "animations/idle/frame_00.png",
+    "crop": [0.25, 0.045, 0.75, 0.46],
+    "shape": "circle"
+  },
+  "supportedModes": [
+    "GRAVITY",
+    "BORDER_WALK",
+    "BORDER_RUN",
+    "HIDE_SEEK",
+    "BOMBER",
+    "SNAKE"
+  ],
+  "accentColor": "#C9577D",
+  "foodColor": "#FFC3D8",
+  "bombColor": "#6D5360"
+}

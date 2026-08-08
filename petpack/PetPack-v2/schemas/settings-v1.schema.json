@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sweetpet.local/schema/settings-v1.json",
+  "title": "SweetPet Pack Settings Extension v1",
+  "type": "object",
+  "required": ["schemaVersion", "settings"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "settings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "type", "default"],
+        "properties": {
+          "key": { "pattern": "^[a-z][a-z0-9_]{0,47}$" },
+          "label": { "type": "string" },
+          "description": { "type": "string" },
+          "type": { "enum": ["boolean", "integer", "choice"] }
+        }
+      }
+    }
+  }
+}

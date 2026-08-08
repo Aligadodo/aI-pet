@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "tasks": [
+    {
+      "id": "drink-water",
+      "title": "喝水时间",
+      "prompt": "陪我一起喝口水，好不好？",
+      "action": "wave",
+      "cooldownMinutes": 90,
+      "options": [
+        {"id": "done", "label": "喝好啦", "response": "真乖，今天也要好好照顾自己。", "action": "wave"},
+        {"id": "later", "label": "15 分钟后", "response": "好呀，我等一会儿再提醒你。", "action": "idle", "snoozeMinutes": 15}
+      ]
+    },
+    {
+      "id": "eye-break",
+      "title": "眼睛休息一下",
+      "prompt": "看屏幕有一会儿啦，要不要望望远处？",
+      "action": "wave",
+      "cooldownMinutes": 60,
+      "options": [
+        {"id": "rest", "label": "休息 1 分钟", "response": "我陪你一起，慢慢眨眨眼睛。", "action": "idle"},
+        {"id": "busy", "label": "正在忙", "response": "知道啦，我先安静待在旁边。", "action": "idle", "snoozeMinutes": 20}
+      ]
+    },
+    {
+      "id": "photo-memory",
+      "title": "今日纪念",
+      "prompt": "今天也留下一张可爱的纪念照吧。",
+      "action": "photo_pose",
+      "cooldownMinutes": 240,
+      "options": [
+        {"id": "pose", "label": "一起拍", "response": "三、二、一——笑一个！", "action": "photo_pose"},
+        {"id": "skip", "label": "下次吧", "response": "没关系，想拍的时候再叫我。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "morning-plan",
+      "title": "晨间小目标",
+      "prompt": "今天最重要的一件事，要不要现在定下来？",
+      "action": "wave",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 6, "hourEnd": 10},
+      "options": [
+        {"id": "picked", "label": "已经想好", "response": "很好，先完成它，今天就有了清晰的主线。", "action": "wave"},
+        {"id": "thinking", "label": "再想想", "response": "不着急，从最让你安心的那件事开始。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "lunch-reminder",
+      "title": "午饭别迟到",
+      "prompt": "快到饭点啦，今天有好好吃饭的计划吗？",
+      "action": "wave",
+      "cooldownMinutes": 360,
+      "when": {"hourStart": 11, "hourEnd": 13},
+      "options": [
+        {"id": "eat", "label": "这就去", "response": "好耶，桌面交给我，你安心吃饭。", "action": "wave"},
+        {"id": "later", "label": "忙十分钟", "response": "可以，但说好十分钟后就停一下。", "action": "idle", "snoozeMinutes": 10}
+      ]
+    },
+    {
+      "id": "evening-review",
+      "title": "今天的小结",
+      "prompt": "今天有没有一件值得肯定自己的事？",
+      "action": "photo_pose",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 18, "hourEnd": 22},
+      "options": [
+        {"id": "yes", "label": "有一件", "response": "那就认真夸夸自己，这份努力不是理所当然。", "action": "photo_pose"},
+        {"id": "hard", "label": "今天有点难", "response": "艰难的一天也走到这里了，这本身就很了不起。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "rain-umbrella",
+      "title": "雨天备忘",
+      "prompt": "外面可能有雨，出门前要不要检查一下伞？",
+      "action": "wave",
+      "cooldownMinutes": 300,
+      "when": {"weatherIn": ["rain", "storm"]},
+      "options": [
+        {"id": "packed", "label": "已经带了", "response": "准备充分，雨天也可以从容一点。", "action": "wave"},
+        {"id": "no-trip", "label": "今天不出门", "response": "那就听着雨声，安心把室内过舒服。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "cold-warmup",
+      "title": "暖一暖",
+      "prompt": "天气偏冷，要不要活动一下手指和肩膀？",
+      "action": "walk",
+      "cooldownMinutes": 240,
+      "when": {"weatherIn": ["cold", "snow"]},
+      "options": [
+        {"id": "move", "label": "活动一下", "response": "肩膀放松，手腕转一转，慢慢来。", "action": "walk"},
+        {"id": "warm", "label": "去拿热饮", "response": "好主意，暖暖地回来继续。", "action": "wave"}
+      ]
+    },
+    {
+      "id": "focus-sprint",
+      "title": "专注冲刺",
+      "prompt": "要不要挑一件小事，专心做十分钟？",
+      "action": "run",
+      "cooldownMinutes": 150,
+      "options": [
+        {"id": "start", "label": "现在开始", "response": "冲呀，我会安静陪跑，不打断你。", "action": "run"},
+        {"id": "later", "label": "稍后再说", "response": "可以，等状态合适再开始更有效。", "action": "idle", "snoozeMinutes": 25}
+      ]
+    },
+    {
+      "id": "stretch-break",
+      "title": "伸个懒腰",
+      "prompt": "坐得有点久啦，要不要站起来舒展一下？",
+      "action": "wave",
+      "cooldownMinutes": 120,
+      "options": [
+        {"id": "stretch", "label": "一起伸展", "response": "慢慢抬手、放松肩颈，不需要用力过猛。", "action": "wave"},
+        {"id": "skip", "label": "刚活动过", "response": "收到，那就继续保持舒服的姿势。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "gravity-invite",
+      "title": "重力挑战",
+      "prompt": "把我拖高一点再松手，看看手机倾斜会把我带去哪？",
+      "action": "wave",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "play", "label": "开启重力", "response": "接住我哦——重力传感器开始工作啦！", "action": "run", "playMode": "GRAVITY"},
+        {"id": "skip", "label": "先不玩", "response": "好呀，普通陪伴也很舒服。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "border-run-invite",
+      "title": "边框跑酷",
+      "prompt": "想看我沿着屏幕四条边跑一圈吗？",
+      "action": "run",
+      "cooldownMinutes": 420,
+      "options": [
+        {"id": "run", "label": "跑起来", "response": "出发！转角的时候也会保持贴着边框。", "action": "run", "playMode": "BORDER_RUN"},
+        {"id": "walk", "label": "慢慢散步", "response": "那就换成轻松的边框散步。", "action": "walk", "playMode": "BORDER_WALK"}
+      ]
+    },
+    {
+      "id": "hide-seek-invite",
+      "title": "桌面捉迷藏",
+      "prompt": "回到主页后，要不要来抓住会躲来躲去的头像？",
+      "action": "photo_pose",
+      "cooldownMinutes": 480,
+      "options": [
+        {"id": "play", "label": "开始找你", "response": "请回到主页，我先跑一步啦！", "action": "run", "playMode": "HIDE_SEEK"},
+        {"id": "skip", "label": "下次再玩", "response": "好，我先把藏身点保密。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "bomber-invite",
+      "title": "炸弹人拟态",
+      "prompt": "要不要看我在安全拟态网格里动态寻路？",
+      "action": "run",
+      "cooldownMinutes": 540,
+      "options": [
+        {"id": "play", "label": "开始寻路", "response": "只处理本应用画出的方块，真实桌面不会改变。", "action": "run", "playMode": "BOMBER"},
+        {"id": "skip", "label": "保持安静", "response": "收到，我继续安静陪伴。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "snake-invite",
+      "title": "贪吃蛇拟态",
+      "prompt": "想让头像去吃掉一排拟态小图标，再全部吐回来吗？",
+      "action": "run",
+      "cooldownMinutes": 540,
+      "options": [
+        {"id": "play", "label": "开吃啦", "response": "真实图标不会动，抓住头像可以随时结束。", "action": "run", "playMode": "SNAKE"},
+        {"id": "skip", "label": "不吃图标", "response": "好吧，今天做一只文明桌宠。", "action": "idle"}
+      ]
+    }
+  ]
+}

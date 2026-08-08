@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sweetpet.local/schema/game-kit-v1.json",
+  "title": "SweetPet Game Kit Extension v1",
+  "type": "object",
+  "required": ["schemaVersion", "avatar", "supportedModes"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "avatar": {
+      "type": "object",
+      "required": ["source", "crop"],
+      "properties": {
+        "source": {"type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+$"},
+        "crop": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "shape": {"enum": ["circle", "rect"]}
+      },
+      "additionalProperties": false
+    },
+    "supportedModes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["GRAVITY", "BORDER_WALK", "BORDER_RUN", "HIDE_SEEK", "BOMBER", "SNAKE"]}
+    },
+    "accentColor": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+    "foodColor": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+    "bombColor": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"}
+  },
+  "additionalProperties": false
+}

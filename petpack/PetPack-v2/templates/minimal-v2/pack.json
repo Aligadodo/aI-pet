@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "protocol": {
+    "id": "io.sweetpet.pack",
+    "version": "2.0",
+    "minRuntime": "0.5.0"
+  },
+  "id": "${PACK_ID}",
+  "name": "${PACK_NAME}",
+  "version": "${PACK_VERSION}",
+  "preview": "preview.png",
+  "integrity": "checksums.json",
+  "entrypoints": {
+    "animations": "character/animations.json",
+    "dialogue": "dialogue/zh-CN.json",
+    "behavior": "behavior/default.json",
+    "tasks": "tasks/tasks.json"
+  },
+  "capabilities": ["animation", "dialogue", "behavior", "tasks"],
+  "extensions": []
+}

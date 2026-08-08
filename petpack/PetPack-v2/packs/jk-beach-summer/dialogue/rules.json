@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "rules": [
+    {
+      "id": "sunrise-tap",
+      "event": "tap",
+      "when": {"hourStart": 5, "hourEnd": 9, "chance": 0.85},
+      "lines": [
+        "早呀，晨光刚落在浪尖上，也落在你的今天。",
+        "第一阵海风送达，先喝口水再启程吧。"
+      ]
+    },
+    {
+      "id": "noon-heat-tap",
+      "event": "tap",
+      "when": {"hourStart": 11, "hourEnd": 15, "temperatureMin": 30},
+      "lines": [
+        "太阳有点热情，先喝口水再陪我玩。",
+        "高温时别在户外硬撑，阴凉处也能拥有夏天。"
+      ]
+    },
+    {
+      "id": "sunset-tap",
+      "event": "tap",
+      "when": {"hourStart": 17, "hourEnd": 19, "weatherIn": ["clear", "cloudy", "hot"], "chance": 0.9, "settingKey": "photo_chatter", "settingEquals": "true"},
+      "lines": [
+        "晚霞正在限时营业，要不要和我一起看？",
+        "现在的光很适合拍照，我已经摆好姿势啦。"
+      ]
+    },
+    {
+      "id": "sunny-tone-tap",
+      "event": "tap",
+      "when": {"settingKey": "beach_tone", "settingEquals": "sunny", "chance": 0.8},
+      "lines": [
+        "元气海风到站，今天也一起向前走吧。",
+        "点名成功，送你一颗晒过太阳的好心情。"
+      ]
+    },
+    {
+      "id": "romantic-evening",
+      "event": "double_tap",
+      "when": {"hourStart": 18, "hourEnd": 23, "settingKey": "beach_tone", "settingEquals": "romantic"},
+      "lines": [
+        "晚霞给海面写了情书，我想把落款写成我们。",
+        "靠近一点，今晚的海风只说给你听。"
+      ]
+    },
+    {
+      "id": "gentle-work-companion",
+      "event": "idle",
+      "when": {"hourStart": 14, "hourEnd": 17, "settingKey": "beach_tone", "settingEquals": "gentle", "chance": 0.7},
+      "lines": [
+        "你安心做事，我会待在边缘，不挡住重要内容。",
+        "等键盘声慢下来，我再邀请你看看海。"
+      ]
+    },
+    {
+      "id": "clear-idle",
+      "event": "idle",
+      "when": {"weatherEquals": "clear", "chance": 0.55},
+      "lines": [
+        "外面是晴天，桌面上的海也闪了一下。",
+        "晴朗的日子，记得给自己留十分钟散步。"
+      ]
+    },
+    {
+      "id": "rain-weather",
+      "event": "weather",
+      "when": {"weatherIn": ["rain", "storm"], "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "{city}有雨，今天先不靠近真实海岸，安全最重要。",
+        "雨天的海会更有脾气，我们在室内捡想象中的贝壳。"
+      ]
+    },
+    {
+      "id": "hot-weather",
+      "event": "weather",
+      "when": {"temperatureMin": 30, "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "现在大约 {temperature}℃，水、防晒和阴凉一个都别少。",
+        "热浪上线，户外安排尽量避开最晒的时段。"
+      ]
+    },
+    {
+      "id": "wind-weather",
+      "event": "weather",
+      "when": {"weatherEquals": "windy", "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "风有点大，把帽子拿稳，也注意高处落物。",
+        "今天的风适合听，不适合追，走路慢一点。"
+      ]
+    },
+    {
+      "id": "clear-weather",
+      "event": "weather",
+      "when": {"weatherEquals": "clear", "chance": 0.8, "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "{city}天气晴朗，有空去看看真正的天空吧。",
+        "晴天消息送达，也别忘了紫外线不会缺席。"
+      ]
+    },
+    {
+      "id": "cool-weather",
+      "event": "weather",
+      "when": {"temperatureMax": 15, "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "现在大约 {temperature}℃，海风体感会更凉，带件外套吧。",
+        "凉意靠岸啦，手脚暖和了才适合慢慢看海。"
+      ]
+    },
+    {
+      "id": "cloudy-weather",
+      "event": "weather",
+      "when": {"weatherEquals": "cloudy", "settingKey": "beach_safety", "settingEquals": "true", "chance": 0.8},
+      "lines": [
+        "云多的时候，天空像一封还没写完的信。",
+        "多云也会有紫外线，短暂散步也别忘了防晒。"
+      ]
+    },
+    {
+      "id": "fog-weather",
+      "event": "weather",
+      "when": {"weatherEquals": "fog", "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "今天有雾，真实海边能见度低，先别独自走远。",
+        "雾把远处藏起来了，我们把活动范围留在熟悉的地方。"
+      ]
+    },
+    {
+      "id": "snow-weather",
+      "event": "weather",
+      "when": {"weatherEquals": "snow", "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "有雪时海边路面更滑，今天先把追浪计划换成暖岸模式。",
+        "雪天消息送达，保暖、防滑和早点回家都比逞强重要。"
+      ]
+    },
+    {
+      "id": "friday-sunset",
+      "event": "evening",
+      "when": {"dayOfWeek": 5, "hourStart": 18, "hourEnd": 21},
+      "lines": [
+        "星期五的晚霞到了，这周辛苦的部分先放下吧。",
+        "周末正在靠岸，要不要安排一件期待的小事？"
+      ]
+    },
+    {
+      "id": "saturday-morning",
+      "event": "morning",
+      "when": {"dayOfWeek": 6, "hourStart": 6, "hourEnd": 10},
+      "lines": [
+        "周六早安，今天的行程可以留一点随风改变的空白。",
+        "不用赶潮汐，先睡够、吃好，再决定去哪儿。"
+      ]
+    },
+    {
+      "id": "monday-morning",
+      "event": "morning",
+      "when": {"dayOfWeek": 1, "hourStart": 6, "hourEnd": 10},
+      "lines": [
+        "新一周像新的沙滩，只留今天这一小步脚印就好。",
+        "星期一慢慢启动，我会陪你把第一件事做完。"
+      ]
+    },
+    {
+      "id": "lunch-safety",
+      "event": "lunch",
+      "when": {"hourStart": 11, "hourEnd": 13, "weatherIn": ["clear", "cloudy", "hot"], "settingKey": "beach_safety", "settingEquals": "true"},
+      "lines": [
+        "午间紫外线更强，出门记得遮阳和补涂防晒。",
+        "先吃饭、再补水，避开最晒的时候去散步。"
+      ]
+    },
+    {
+      "id": "late-tide",
+      "event": "late_night",
+      "when": {"hourStart": 23, "hourEnd": 3, "settingKey": "late_tide_chatter", "settingEquals": "true"},
+      "lines": [
+        "夜潮已经睡着一半啦，你也该靠岸休息。",
+        "保存进度吧，明天的海风会带来新的办法。"
+      ]
+    }
+  ]
+}

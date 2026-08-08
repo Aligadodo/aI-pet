@@ -1,0 +1,42 @@
+SweetGirlfriendDesktopPet third-party notices
+================================================
+
+The Windows runtime archives include dynamically linked third-party runtime
+components. They remain subject to their own licenses. This notice and the
+license texts in the accompanying THIRD_PARTY_LICENSES directory must remain
+with redistributed runtime archives.
+
+PySide6 / Shiboken6 / Qt 6
+--------------------------
+Version used by the current build: 6.9.1.
+
+The community edition is used under GNU Lesser General Public License v3.0.
+Qt and PySide sources and installation instructions are available from:
+
+  https://code.qt.io/cgit/qt/
+  https://code.qt.io/cgit/pyside/pyside-setup.git/
+  https://doc.qt.io/qtforpython-6/
+
+The application uses the shipped Qt/PySide DLLs dynamically. In the onedir
+Windows package, these libraries are stored below `_internal/PySide6` and
+`_internal/shiboken6`, so a recipient can inspect or replace compatible DLLs.
+See LGPL-3.0.txt and GPL-3.0.txt for the complete license terms incorporated
+by the LGPL.
+
+Python
+------
+The packaged interpreter is Python 3.11 and is licensed under the Python
+Software Foundation License. See PYTHON-3.11.txt.
+
+PyInstaller
+-----------
+The bundle was produced with PyInstaller 6.14.2. Its bootloader exception
+permits distributing the resulting bundle under terms chosen for the
+application, while PyInstaller itself remains under its stated license.
+See PYINSTALLER-6.14.2.txt.
+
+Pillow
+------
+The current build toolchain uses Pillow 12.2.0. See PILLOW-12.2.0.txt.
+
+No third-party trademark endorsement is implied.

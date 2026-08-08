@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "canvas": [512, 512],
+  "actions": {
+    "idle": {
+      "fps": 3,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.965],
+        "sceneTags": ["ground", "rest", "dialogue"]
+      },
+      "frames": [
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_02.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_04.png",
+        "animations/idle/frame_05.png",
+        "animations/idle/frame_06.png",
+        "animations/idle/frame_07.png",
+        "animations/idle/frame_08.png"
+      ]
+    },
+    "walk": {
+      "fps": 14,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "pathfinding"]
+      },
+      "frames": [
+        "animations/walk/frame_00.png",
+        "animations/walk/frame_01.png",
+        "animations/walk/frame_02.png",
+        "animations/walk/frame_03.png",
+        "animations/walk/frame_04.png",
+        "animations/walk/frame_05.png",
+        "animations/walk/frame_06.png",
+        "animations/walk/frame_07.png",
+        "animations/walk/frame_08.png",
+        "animations/walk/frame_09.png",
+        "animations/walk/frame_10.png",
+        "animations/walk/frame_11.png"
+      ]
+    },
+    "run": {
+      "fps": 16,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "arcade", "pathfinding"]
+      },
+      "frames": [
+        "animations/run/frame_00.png",
+        "animations/run/frame_01.png",
+        "animations/run/frame_02.png",
+        "animations/run/frame_03.png",
+        "animations/run/frame_04.png",
+        "animations/run/frame_05.png",
+        "animations/run/frame_06.png",
+        "animations/run/frame_07.png",
+        "animations/run/frame_08.png",
+        "animations/run/frame_09.png",
+        "animations/run/frame_10.png",
+        "animations/run/frame_11.png"
+      ]
+    },
+    "wave": {
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.965],
+        "sceneTags": ["ground", "dialogue", "task"]
+      },
+      "frames": [
+        "animations/wave/frame_00.png",
+        "animations/wave/frame_01.png",
+        "animations/wave/frame_02.png",
+        "animations/wave/frame_03.png",
+        "animations/wave/frame_04.png",
+        "animations/wave/frame_05.png",
+        "animations/wave/frame_06.png"
+      ]
+    },
+    "photo_pose": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.965],
+        "sceneTags": ["ground", "dialogue", "task", "photo"]
+      },
+      "frames": [
+        "animations/photo_pose/frame_00.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_02.png"
+      ]
+    }
+  }
+}

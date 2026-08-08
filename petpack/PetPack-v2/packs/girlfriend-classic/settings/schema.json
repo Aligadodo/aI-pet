@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "settings": [
+    {
+      "key": "greeting_style",
+      "label": "问候风格",
+      "description": "控制动态时段问候的语气。",
+      "type": "choice",
+      "default": "warm",
+      "options": [
+        { "value": "warm", "label": "温柔" },
+        { "value": "playful", "label": "俏皮" }
+      ]
+    },
+    {
+      "key": "sweetness",
+      "label": "甜蜜程度",
+      "description": "影响资源包扩展台词的亲密程度。",
+      "type": "integer",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 10
+    },
+    {
+      "key": "photo_prompts",
+      "label": "拍照邀请",
+      "description": "允许资源包主动触发拍照姿势相关任务。",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}

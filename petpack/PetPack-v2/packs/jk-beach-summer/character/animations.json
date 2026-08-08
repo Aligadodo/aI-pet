@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "canvas": [512, 512],
+  "actions": {
+    "idle": {
+      "fps": 4,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "dialogue", "beach"]
+      },
+      "frames": [
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_02.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_03.png"
+      ]
+    },
+    "walk": {
+      "fps": 12,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "pathfinding", "beach"]
+      },
+      "frames": [
+        "animations/walk/frame_00.png",
+        "animations/walk/frame_01.png",
+        "animations/walk/frame_02.png",
+        "animations/walk/frame_03.png",
+        "animations/walk/frame_04.png",
+        "animations/walk/frame_05.png",
+        "animations/walk/frame_06.png",
+        "animations/walk/frame_07.png"
+      ]
+    },
+    "run": {
+      "fps": 16,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "arcade", "pathfinding", "beach"]
+      },
+      "frames": [
+        "animations/run/frame_00.png",
+        "animations/run/frame_01.png",
+        "animations/run/frame_02.png",
+        "animations/run/frame_03.png",
+        "animations/run/frame_04.png",
+        "animations/run/frame_05.png",
+        "animations/run/frame_06.png",
+        "animations/run/frame_07.png"
+      ]
+    },
+    "wave": {
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "greeting"]
+      },
+      "frames": [
+        "animations/wave/frame_00.png",
+        "animations/wave/frame_01.png",
+        "animations/wave/frame_02.png",
+        "animations/wave/frame_03.png"
+      ]
+    },
+    "photo_pose": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "photo", "beach"]
+      },
+      "frames": [
+        "animations/photo_pose/frame_00.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_02.png",
+        "animations/photo_pose/frame_03.png"
+      ]
+    },
+    "sea_breeze": {
+      "fps": 4,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "task", "breeze", "beach"]
+      },
+      "frames": [
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png",
+        "animations/sea_breeze/frame_01.png",
+        "animations/sea_breeze/frame_03.png",
+        "animations/sea_breeze/frame_00.png",
+        "animations/sea_breeze/frame_02.png"
+      ]
+    },
+    "shell_pick": {
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "task", "shell", "beach"]
+      },
+      "frames": [
+        "animations/shell_pick/frame_00.png",
+        "animations/shell_pick/frame_01.png",
+        "animations/shell_pick/frame_02.png",
+        "animations/shell_pick/frame_03.png"
+      ]
+    },
+    "splash_jump": {
+      "fps": 8,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "task", "jump", "splash", "beach"]
+      },
+      "frames": [
+        "animations/splash_jump/frame_00.png",
+        "animations/splash_jump/frame_01.png",
+        "animations/splash_jump/frame_02.png",
+        "animations/splash_jump/frame_03.png"
+      ]
+    },
+    "sunset_flower": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "sunset", "flower", "beach"]
+      },
+      "frames": [
+        "animations/sunset_flower/frame_00.png",
+        "animations/sunset_flower/frame_01.png",
+        "animations/sunset_flower/frame_02.png",
+        "animations/sunset_flower/frame_03.png"
+      ]
+    },
+    "sleepy_pose": {
+      "fps": 1,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "sleep", "late-night"]
+      },
+      "frames": [
+        "animations/sleepy_pose/frame_00.png",
+        "animations/sleepy_pose/frame_01.png",
+        "animations/sleepy_pose/frame_02.png",
+        "animations/sleepy_pose/frame_03.png"
+      ]
+    }
+  }
+}

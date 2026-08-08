@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "protocol": {
+    "id": "io.sweetpet.pack",
+    "version": "2.0",
+    "minRuntime": "0.5.0"
+  },
+  "id": "girlfriend-classic",
+  "name": "我家女友·经典汉服",
+  "version": "1.2.1",
+  "author": "Sweet Girlfriend Desktop Pet",
+  "preview": "preview.png",
+  "integrity": "checksums.json",
+  "entrypoints": {
+    "animations": "character/animations.json",
+    "dialogue": "dialogue/zh-CN.json",
+    "behavior": "behavior/default.json",
+    "tasks": "tasks/tasks.json"
+  },
+  "capabilities": [
+    "animation",
+    "dialogue",
+    "behavior",
+    "tasks",
+    "wallpaper",
+    "overlay"
+    ,"game-modes"
+  ],
+  "extensions": [
+    {
+      "id": "io.sweetpet.pack-settings",
+      "apiVersion": 1,
+      "entrypoint": "settings/schema.json",
+      "required": false
+    },
+    {
+      "id": "io.sweetpet.dialogue-rules",
+      "apiVersion": 1,
+      "entrypoint": "dialogue/rules.json",
+      "required": false
+    },
+    {
+      "id": "io.sweetpet.game-kit",
+      "apiVersion": 1,
+      "entrypoint": "character/game-kit.json",
+      "required": false
+    }
+  ]
+}

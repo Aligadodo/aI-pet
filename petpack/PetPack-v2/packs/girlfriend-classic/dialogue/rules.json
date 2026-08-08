@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "rules": [
+    {
+      "id": "warm-morning",
+      "event": "tap",
+      "when": {"hourStart": 5, "hourEnd": 11, "settingKey": "greeting_style", "settingEquals": "warm"},
+      "lines": [
+        "早上好呀，今天也慢慢来，我会陪着你。",
+        "新的一天见到你，心情一下子就亮了。",
+        "早安，先挑一件最重要的小事开始吧。"
+      ]
+    },
+    {
+      "id": "playful-evening",
+      "event": "tap",
+      "when": {"hourStart": 18, "hourEnd": 23, "settingKey": "greeting_style", "settingEquals": "playful"},
+      "lines": [
+        "晚上被我逮到啦，今天有没有偷偷想我？",
+        "忙完了吗？现在轮到我占用你一分钟。",
+        "夜间限定回应：给今天的你加一颗小红花。"
+      ]
+    },
+    {
+      "id": "rain-context",
+      "event": "weather",
+      "when": {"weatherIn": ["rain", "storm"], "chance": 0.9},
+      "lines": [
+        "{city}有雨，出门记得带伞，鞋子也尽量选不怕水的。",
+        "外面湿漉漉的，走路慢一点，我不催你。",
+        "雨天适合把任务切小一点，一件件完成。"
+      ]
+    },
+    {
+      "id": "snow-context",
+      "event": "weather",
+      "when": {"weatherEquals": "snow"},
+      "lines": [
+        "{city}有雪，路面可能会滑，走路要稳一点。",
+        "下雪的消息送到啦，保暖比好看更重要。"
+      ]
+    },
+    {
+      "id": "hot-context",
+      "event": "weather",
+      "when": {"temperatureMin": 32},
+      "lines": [
+        "现在大约 {temperature}℃，记得补水，别在太阳下硬撑。",
+        "天气很热，户外安排尽量避开最晒的时候。"
+      ]
+    },
+    {
+      "id": "cold-context",
+      "event": "weather",
+      "when": {"temperatureMax": 5},
+      "lines": [
+        "现在大约 {temperature}℃，外套和热饮都可以安排上。",
+        "冷空气到了，手脚暖和了做事才更舒服。"
+      ]
+    },
+    {
+      "id": "clear-context",
+      "event": "weather",
+      "when": {"weatherEquals": "clear", "chance": 0.75},
+      "lines": [
+        "{city}天气晴朗，有空可以看看真正的天空。",
+        "外面是晴天，给今天留一小段散步时间吧。"
+      ]
+    },
+    {
+      "id": "wind-context",
+      "event": "weather",
+      "when": {"weatherEquals": "windy"},
+      "lines": [
+        "今天风比较大，帽子和随身小物要拿稳。",
+        "风大的日子走路别太急，注意高处落物。"
+      ]
+    },
+    {
+      "id": "friday-evening",
+      "event": "evening",
+      "when": {"dayOfWeek": 5, "hourStart": 17, "hourEnd": 23},
+      "lines": [
+        "星期五晚上啦，这周辛苦的部分可以先放下。",
+        "周末正在靠近，要不要给自己安排一点期待？"
+      ]
+    },
+    {
+      "id": "late-save",
+      "event": "late_night",
+      "when": {"hourStart": 0, "hourEnd": 4},
+      "lines": [
+        "已经过零点了，先保存，再休息，好吗？",
+        "这个时间更适合睡觉，而不是和一个难题较劲。"
+      ]
+    }
+  ]
+}

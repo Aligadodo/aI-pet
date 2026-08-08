@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "result": "pass",
+  "archive": "jk-beach-summer-1.0.0.petpack",
+  "archiveSha256": "fe71fd0232f65d4604e2ee6974da9e3a4a4edb13530c608629e6ef989724514b",
+  "archiveSizeBytes": 4371316,
+  "deviceSerial": "dedicated-emulator",
+  "deviceType": "emulator",
+  "physicalDeviceExplicitlyAllowed": false,
+  "vivoScannerCompatibility": "pass",
+  "packId": "jk-beach-summer",
+  "version": "1.0.0",
+  "actions": 10,
+  "tasks": 29
+}

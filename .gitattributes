@@ -1,0 +1,24 @@
+* text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+gradlew text eol=lf
+*.kt text eol=lf
+*.kts text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+desktop/SweetGirlfriendDesktopPet/licenses/*.txt text eol=lf -whitespace
+desktop/SweetGirlfriendDesktopPet/THIRD_PARTY_NOTICES.txt text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.jar binary

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "settings": [
+    {
+      "key": "beach_tone",
+      "label": "海边额外台词风格",
+      "description": "在特定点击、待机或晚间场景中额外加入对应风格的候选台词。",
+      "type": "choice",
+      "default": "sunny",
+      "options": [
+        {"value": "sunny", "label": "晴朗活泼"},
+        {"value": "gentle", "label": "安静温柔"},
+        {"value": "romantic", "label": "晚霞浪漫"}
+      ]
+    },
+    {
+      "key": "beach_safety",
+      "label": "海边安全台词",
+      "description": "控制天气与午间对话中的防晒、风雨、雾天和体感提醒；不影响任务开关。",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "photo_chatter",
+      "label": "夏日拍照台词",
+      "description": "在傍晚晴朗或多云时点击人物，额外加入晚霞拍照台词。",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "late_tide_chatter",
+      "label": "夜潮收尾台词",
+      "description": "在深夜基础台词之外，额外加入两条夜潮收尾提醒。",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+# Operating-system and editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.lnk
+.idea/
+.vscode/
+*.iml
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+local.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+adbkey*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Android / Gradle
+.gradle/
+.gradle-agent-cache/
+.kotlin/
+**/build/
+captures/
+externalBuildRoot/
+
+# Packaging and temporary work
+dist/
+tmp/
+work/
+outputs/
+package_staging*/
+*.apk
+*.aab
+*.apks
+*.petpack
+*.exe
+*.dll
+*.pyd
+*.msi
+*.zip
+
+# Local QA output
+ui-*.xml
+window_dump*.xml
+*.log

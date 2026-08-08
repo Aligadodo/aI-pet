@@ -1,0 +1,349 @@
+{
+  "schema_version": 3,
+  "canvas": [
+    512,
+    512
+  ],
+  "render_fps_multiplier": 1,
+  "normalize_within_animation": true,
+  "animations": {
+    "idle": {
+      "fps": 3,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_02.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_04.png",
+        "animations/idle/frame_05.png",
+        "animations/idle/frame_06.png",
+        "animations/idle/frame_07.png",
+        "animations/idle/frame_08.png"
+      ]
+    },
+    "walk": {
+      "fps": 14,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/walk/frame_00.png",
+        "animations/walk/frame_01.png",
+        "animations/walk/frame_02.png",
+        "animations/walk/frame_03.png",
+        "animations/walk/frame_04.png",
+        "animations/walk/frame_05.png",
+        "animations/walk/frame_06.png",
+        "animations/walk/frame_07.png",
+        "animations/walk/frame_08.png",
+        "animations/walk/frame_09.png",
+        "animations/walk/frame_10.png",
+        "animations/walk/frame_11.png"
+      ]
+    },
+    "run": {
+      "fps": 16,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/run/frame_00.png",
+        "animations/run/frame_01.png",
+        "animations/run/frame_02.png",
+        "animations/run/frame_03.png",
+        "animations/run/frame_04.png",
+        "animations/run/frame_05.png",
+        "animations/run/frame_06.png",
+        "animations/run/frame_07.png",
+        "animations/run/frame_08.png",
+        "animations/run/frame_09.png",
+        "animations/run/frame_10.png",
+        "animations/run/frame_11.png"
+      ]
+    },
+    "drag": {
+      "fps": 5,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/drag/frame_00.png",
+        "animations/drag/frame_01.png",
+        "animations/drag/frame_02.png",
+        "animations/drag/frame_03.png",
+        "animations/drag/frame_04.png",
+        "animations/drag/frame_05.png",
+        "animations/drag/frame_06.png",
+        "animations/drag/frame_07.png"
+      ]
+    },
+    "climb": {
+      "fps": 7,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/climb/frame_00.png",
+        "animations/climb/frame_01.png",
+        "animations/climb/frame_02.png",
+        "animations/climb/frame_03.png",
+        "animations/climb/frame_04.png",
+        "animations/climb/frame_05.png",
+        "animations/climb/frame_06.png",
+        "animations/climb/frame_07.png"
+      ]
+    },
+    "perch": {
+      "fps": 1.8,
+      "loop": true,
+      "frames": [
+        "animations/perch/frame_00.png",
+        "animations/perch/frame_01.png",
+        "animations/perch/frame_02.png",
+        "animations/perch/frame_03.png",
+        "animations/perch/frame_04.png",
+        "animations/perch/frame_05.png"
+      ]
+    },
+    "happy": {
+      "fps": 4,
+      "loop": false,
+      "frames": [
+        "animations/happy/frame_00.png",
+        "animations/happy/frame_01.png",
+        "animations/happy/frame_02.png",
+        "animations/happy/frame_03.png"
+      ]
+    },
+    "jump": {
+      "fps": 9,
+      "loop": false,
+      "frames": [
+        "animations/jump/frame_00.png",
+        "animations/jump/frame_01.png",
+        "animations/jump/frame_02.png",
+        "animations/jump/frame_03.png",
+        "animations/jump/frame_04.png",
+        "animations/jump/frame_05.png",
+        "animations/jump/frame_06.png",
+        "animations/jump/frame_07.png",
+        "animations/jump/frame_08.png",
+        "animations/jump/frame_09.png"
+      ]
+    },
+    "hug": {
+      "fps": 5,
+      "loop": false,
+      "frames": [
+        "animations/hug/frame_00.png",
+        "animations/hug/frame_01.png",
+        "animations/hug/frame_02.png",
+        "animations/hug/frame_03.png",
+        "animations/hug/frame_04.png",
+        "animations/hug/frame_05.png"
+      ]
+    },
+    "heart": {
+      "fps": 4.5,
+      "loop": false,
+      "frames": [
+        "animations/heart/frame_00.png",
+        "animations/heart/frame_01.png",
+        "animations/heart/frame_02.png",
+        "animations/heart/frame_03.png",
+        "animations/heart/frame_04.png",
+        "animations/heart/frame_05.png"
+      ]
+    },
+    "eat": {
+      "fps": 5,
+      "loop": false,
+      "frames": [
+        "animations/eat/frame_00.png",
+        "animations/eat/frame_01.png",
+        "animations/eat/frame_02.png",
+        "animations/eat/frame_03.png",
+        "animations/eat/frame_04.png",
+        "animations/eat/frame_05.png"
+      ]
+    },
+    "beg": {
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        "animations/beg/frame_00.png",
+        "animations/beg/frame_01.png",
+        "animations/beg/frame_02.png",
+        "animations/beg/frame_03.png",
+        "animations/beg/frame_04.png",
+        "animations/beg/frame_05.png",
+        "animations/beg/frame_06.png",
+        "animations/beg/frame_07.png"
+      ]
+    },
+    "pout": {
+      "fps": 4.5,
+      "loop": false,
+      "frames": [
+        "animations/pout/frame_00.png",
+        "animations/pout/frame_01.png",
+        "animations/pout/frame_02.png",
+        "animations/pout/frame_03.png",
+        "animations/pout/frame_04.png",
+        "animations/pout/frame_05.png",
+        "animations/pout/frame_06.png",
+        "animations/pout/frame_07.png"
+      ]
+    },
+    "cry": {
+      "fps": 3,
+      "loop": false,
+      "frames": [
+        "animations/cry/frame_00.png",
+        "animations/cry/frame_01.png",
+        "animations/cry/frame_02.png",
+        "animations/cry/frame_03.png",
+        "animations/cry/frame_04.png",
+        "animations/cry/frame_05.png"
+      ]
+    },
+    "angry": {
+      "fps": 4,
+      "loop": false,
+      "frames": [
+        "animations/angry/frame_00.png",
+        "animations/angry/frame_01.png",
+        "animations/angry/frame_02.png",
+        "animations/angry/frame_03.png",
+        "animations/angry/frame_04.png",
+        "animations/angry/frame_05.png"
+      ]
+    },
+    "stomp": {
+      "fps": 7,
+      "loop": false,
+      "frames": [
+        "animations/stomp/frame_00.png",
+        "animations/stomp/frame_01.png",
+        "animations/stomp/frame_02.png",
+        "animations/stomp/frame_03.png",
+        "animations/stomp/frame_04.png",
+        "animations/stomp/frame_05.png",
+        "animations/stomp/frame_06.png"
+      ]
+    },
+    "gaze": {
+      "fps": 1,
+      "loop": true,
+      "normalize": false,
+      "frames": [
+        "animations/gaze/frame_00.png",
+        "animations/gaze/frame_01.png",
+        "animations/gaze/frame_02.png",
+        "animations/gaze/frame_03.png",
+        "animations/gaze/frame_04.png",
+        "animations/gaze/frame_05.png"
+      ]
+    },
+    "wait": {
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        "animations/wait/frame_00.png",
+        "animations/wait/frame_01.png",
+        "animations/wait/frame_02.png",
+        "animations/wait/frame_03.png",
+        "animations/wait/frame_04.png",
+        "animations/wait/frame_05.png"
+      ]
+    },
+    "sleep": {
+      "fps": 2,
+      "loop": false,
+      "frames": [
+        "animations/sleep/frame_00.png",
+        "animations/sleep/frame_01.png",
+        "animations/sleep/frame_02.png",
+        "animations/sleep/frame_03.png",
+        "animations/sleep/frame_04.png",
+        "animations/sleep/frame_05.png"
+      ]
+    },
+    "wave": {
+      "fps": 6,
+      "loop": false,
+      "frames": [
+        "animations/wave/frame_00.png",
+        "animations/wave/frame_01.png",
+        "animations/wave/frame_02.png",
+        "animations/wave/frame_03.png",
+        "animations/wave/frame_04.png",
+        "animations/wave/frame_05.png",
+        "animations/wave/frame_06.png"
+      ]
+    },
+    "stretch": {
+      "fps": 5,
+      "loop": false,
+      "normalize": false,
+      "frames": [
+        "animations/stretch/frame_00.png",
+        "animations/stretch/frame_01.png",
+        "animations/stretch/frame_02.png",
+        "animations/stretch/frame_03.png",
+        "animations/stretch/frame_04.png",
+        "animations/stretch/frame_05.png",
+        "animations/stretch/frame_06.png",
+        "animations/stretch/frame_07.png"
+      ]
+    },
+    "read": {
+      "fps": 3,
+      "loop": true,
+      "frames": [
+        "animations/read/frame_00.png",
+        "animations/read/frame_01.png",
+        "animations/read/frame_02.png",
+        "animations/read/frame_03.png",
+        "animations/read/frame_04.png",
+        "animations/read/frame_05.png",
+        "animations/read/frame_06.png",
+        "animations/read/frame_07.png"
+      ]
+    },
+    "umbrella": {
+      "fps": 5,
+      "loop": false,
+      "frames": [
+        "animations/umbrella/frame_00.png",
+        "animations/umbrella/frame_01.png",
+        "animations/umbrella/frame_02.png",
+        "animations/umbrella/frame_03.png",
+        "animations/umbrella/frame_04.png",
+        "animations/umbrella/frame_05.png",
+        "animations/umbrella/frame_06.png",
+        "animations/umbrella/frame_07.png",
+        "animations/umbrella/frame_08.png"
+      ]
+    },
+    "sip": {
+      "fps": 3.2,
+      "loop": false,
+      "frames": [
+        "animations/sip/frame_00.png",
+        "animations/sip/frame_01.png",
+        "animations/sip/frame_02.png",
+        "animations/sip/frame_03.png",
+        "animations/sip/frame_04.png",
+        "animations/sip/frame_05.png"
+      ]
+    },
+    "photo_pose": {
+      "fps": 4.5,
+      "loop": false,
+      "frames": [
+        "animations/photo_pose/frame_00.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_02.png"
+      ]
+    }
+  }
+}

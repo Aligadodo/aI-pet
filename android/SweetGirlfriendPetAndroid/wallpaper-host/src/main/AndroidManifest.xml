@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <service
+            android:name="com.sweetgirlfriend.pet.wallpaper.PetWallpaperService"
+            android:description="@string/wallpaper_description"
+            android:exported="true"
+            android:label="@string/wallpaper_name"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/pet_wallpaper" />
+        </service>
+    </application>
+</manifest>

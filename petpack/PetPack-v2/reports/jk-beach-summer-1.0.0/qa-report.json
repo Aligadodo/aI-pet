@@ -1,0 +1,809 @@
+{
+  "animations": {
+    "actions": {
+      "idle": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          461,
+          461
+        ],
+        "bboxWidthRange": [
+          147,
+          154
+        ],
+        "fps": 4,
+        "frameCount": 16,
+        "frames": [
+          {
+            "bbox": [
+              181,
+              21,
+              328,
+              482
+            ],
+            "path": "animations/idle/frame_00.png",
+            "sha256": "e5bb52f0af19d0931d48e735333288553a5f793114af70f7ce392878a219b783"
+          },
+          {
+            "bbox": [
+              174,
+              21,
+              328,
+              482
+            ],
+            "path": "animations/idle/frame_01.png",
+            "sha256": "9e5f20c03dbf58034689019ba2b8e9aa5236c5915f7bb3f9b8b80eadcad72afe"
+          },
+          {
+            "bbox": [
+              173,
+              21,
+              325,
+              482
+            ],
+            "path": "animations/idle/frame_03.png",
+            "sha256": "f58d67d33c7eb63f3d37c57453da0fa97847eaf86b9440304a1354859898414a"
+          },
+          {
+            "bbox": [
+              172,
+              21,
+              326,
+              482
+            ],
+            "path": "animations/idle/frame_02.png",
+            "sha256": "ae4f6caa2915ae27cc250670eb2ff31d4d7fde20d482aa5ce92e9d6d3080b945"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": true,
+        "maxAlphaDifference": 0.026,
+        "maxCenterStepPx": 5.5,
+        "maxVisibleAreaRatio": 1.0201,
+        "uniqueFrameCount": 4
+      },
+      "photo_pose": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          438,
+          448
+        ],
+        "bboxWidthRange": [
+          127,
+          313
+        ],
+        "fps": 5,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              181,
+              37,
+              343,
+              482
+            ],
+            "path": "animations/photo_pose/frame_00.png",
+            "sha256": "1ed926dfce3f030464f29abb484d5786b87591771c017512d2e0625cca65f8e8"
+          },
+          {
+            "bbox": [
+              160,
+              34,
+              331,
+              482
+            ],
+            "path": "animations/photo_pose/frame_01.png",
+            "sha256": "45bccaafffb6a55ca8c0de637a3815cd0e64b4baeb1fe4bb5f8005746da74b69"
+          },
+          {
+            "bbox": [
+              178,
+              37,
+              305,
+              482
+            ],
+            "path": "animations/photo_pose/frame_02.png",
+            "sha256": "76defea8eaab118249bced65cd843e48aa9a50231953ea5db044b6f9cc574bce"
+          },
+          {
+            "bbox": [
+              86,
+              44,
+              399,
+              482
+            ],
+            "path": "animations/photo_pose/frame_03.png",
+            "sha256": "cdd8dfbf803ec164702da76ca8775a3d93691e843e4e1571cf1d8ec336229f10"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": false,
+        "maxAlphaDifference": 0.0866,
+        "maxCenterStepPx": 16.568,
+        "maxVisibleAreaRatio": 1.0851,
+        "uniqueFrameCount": 4
+      },
+      "run": {
+        "bboxBottomRange": [
+          473,
+          481
+        ],
+        "bboxHeightRange": [
+          353,
+          396
+        ],
+        "bboxWidthRange": [
+          218,
+          330
+        ],
+        "fps": 16,
+        "frameCount": 8,
+        "frames": [
+          {
+            "bbox": [
+              97,
+              86,
+              413,
+              482
+            ],
+            "path": "animations/run/frame_00.png",
+            "sha256": "8bbd888fa3d3404941bead9af6797e6b5fd72fae015a1863763293c44db8ecec"
+          },
+          {
+            "bbox": [
+              137,
+              113,
+              370,
+              477
+            ],
+            "path": "animations/run/frame_01.png",
+            "sha256": "13b154d10ccbeb212b922f3cb53c3d431a21f678f8f004fdd5c18d943a55c39f"
+          },
+          {
+            "bbox": [
+              75,
+              92,
+              384,
+              474
+            ],
+            "path": "animations/run/frame_02.png",
+            "sha256": "5e6405cdbe81ac81228d0b0db595689d06c4a6eb18eea38022d608b7f0c05a69"
+          },
+          {
+            "bbox": [
+              82,
+              121,
+              375,
+              474
+            ],
+            "path": "animations/run/frame_03.png",
+            "sha256": "eba7a8686459ecb2022d4a0e6e00cec94e15db784db707667c96fdb553e43668"
+          },
+          {
+            "bbox": [
+              87,
+              89,
+              417,
+              474
+            ],
+            "path": "animations/run/frame_04.png",
+            "sha256": "7c5b63ad1fc182b2d6b12ee787d4eab76496746ade160f2607f58975d8c4ea1a"
+          },
+          {
+            "bbox": [
+              135,
+              101,
+              353,
+              478
+            ],
+            "path": "animations/run/frame_05.png",
+            "sha256": "b03255c153740f7c05ea5b1564c1f838616a0b716855c4d09b3220a2dc239944"
+          },
+          {
+            "bbox": [
+              83,
+              96,
+              375,
+              474
+            ],
+            "path": "animations/run/frame_06.png",
+            "sha256": "64e1f85375b7ac17869f2dc0e912fbe78783626c35796ab28eb37f3b64fd6b05"
+          },
+          {
+            "bbox": [
+              73,
+              96,
+              396,
+              474
+            ],
+            "path": "animations/run/frame_07.png",
+            "sha256": "ecb8e9b4e9370f484f912fb48b4270d6f2c1301e1ec9f21eb1df99c2ea61d318"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          8
+        ],
+        "loop": true,
+        "maxAlphaDifference": 0.1064,
+        "maxCenterStepPx": 28.43,
+        "maxVisibleAreaRatio": 1.1633,
+        "uniqueFrameCount": 8
+      },
+      "sea_breeze": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          462,
+          463
+        ],
+        "bboxWidthRange": [
+          165,
+          188
+        ],
+        "fps": 4,
+        "frameCount": 16,
+        "frames": [
+          {
+            "bbox": [
+              184,
+              19,
+              351,
+              482
+            ],
+            "path": "animations/sea_breeze/frame_00.png",
+            "sha256": "2fad5bca23c812d4bf87e67dc0715ff68e236baf289e794251209ac8ad321058"
+          },
+          {
+            "bbox": [
+              173,
+              20,
+              338,
+              482
+            ],
+            "path": "animations/sea_breeze/frame_02.png",
+            "sha256": "ac54272d2ea784edac1dfcb691aeffc15c7a78d0de0bcfd4b2bfe8104997a722"
+          },
+          {
+            "bbox": [
+              166,
+              19,
+              354,
+              482
+            ],
+            "path": "animations/sea_breeze/frame_01.png",
+            "sha256": "ca3e90c29a05aecbc7231449676b2e19e2629bd50c15c33a072b906050d90ea6"
+          },
+          {
+            "bbox": [
+              167,
+              19,
+              354,
+              482
+            ],
+            "path": "animations/sea_breeze/frame_03.png",
+            "sha256": "42bf9415f2fe098eb382425590812b429009506544e9f9b8b2b5ee3bb9e57c27"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": true,
+        "maxAlphaDifference": 0.0604,
+        "maxCenterStepPx": 12.01,
+        "maxVisibleAreaRatio": 1.0637,
+        "uniqueFrameCount": 4
+      },
+      "shell_pick": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          317,
+          465
+        ],
+        "bboxWidthRange": [
+          174,
+          264
+        ],
+        "fps": 6,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              128,
+              165,
+              392,
+              482
+            ],
+            "path": "animations/shell_pick/frame_00.png",
+            "sha256": "aeda3581652ced2a67fe6792fa56244b11288a8890a47aabeb5e3e0e083510ec"
+          },
+          {
+            "bbox": [
+              149,
+              87,
+              341,
+              482
+            ],
+            "path": "animations/shell_pick/frame_01.png",
+            "sha256": "885813f5f75c1f376386112d2a26b1e05e6f06dad9af304dd9771a7e24d11f6e"
+          },
+          {
+            "bbox": [
+              145,
+              19,
+              319,
+              482
+            ],
+            "path": "animations/shell_pick/frame_02.png",
+            "sha256": "77e2f495be96a70cf836da3b81d85bea5364da45d1d4e119605bc4a6a57561c4"
+          },
+          {
+            "bbox": [
+              174,
+              17,
+              357,
+              482
+            ],
+            "path": "animations/shell_pick/frame_03.png",
+            "sha256": "183439c6c530dad9239467f2de70d161c4f2a69cd8a26ca1dfe3b628f4c6bea5"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": false,
+        "maxAlphaDifference": 0.1192,
+        "maxCenterStepPx": 41.785,
+        "maxVisibleAreaRatio": 1.3123,
+        "uniqueFrameCount": 4
+      },
+      "sleepy_pose": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          473,
+          475
+        ],
+        "bboxWidthRange": [
+          127,
+          128
+        ],
+        "fps": 1,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              190,
+              7,
+              317,
+              482
+            ],
+            "path": "animations/sleepy_pose/frame_00.png",
+            "sha256": "1839a368ce73ac3a59627af30fc87ec20b81a1842f540a2f1facface2630b54e"
+          },
+          {
+            "bbox": [
+              180,
+              7,
+              307,
+              482
+            ],
+            "path": "animations/sleepy_pose/frame_01.png",
+            "sha256": "48ac749b87679fe679d2af9503ff47e39b6619c1b88e135b823f98ab90119349"
+          },
+          {
+            "bbox": [
+              182,
+              9,
+              309,
+              482
+            ],
+            "path": "animations/sleepy_pose/frame_02.png",
+            "sha256": "6e26d321631e4018c1a9b99b4eb8bebe522c856a31ba5f3c9787e339f822b009"
+          },
+          {
+            "bbox": [
+              179,
+              7,
+              307,
+              482
+            ],
+            "path": "animations/sleepy_pose/frame_03.png",
+            "sha256": "8caddf57fda956509fefe88d81d147643872e4e804653b7968a1d313a6642f7f"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": true,
+        "maxAlphaDifference": 0.0484,
+        "maxCenterStepPx": 10.5,
+        "maxVisibleAreaRatio": 1.0183,
+        "uniqueFrameCount": 4
+      },
+      "splash_jump": {
+        "bboxBottomRange": [
+          381,
+          481
+        ],
+        "bboxHeightRange": [
+          319,
+          410
+        ],
+        "bboxWidthRange": [
+          221,
+          273
+        ],
+        "fps": 8,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              115,
+              163,
+              374,
+              482
+            ],
+            "path": "animations/splash_jump/frame_00.png",
+            "sha256": "21e06d38206ca1be666ed439ad69d2a1899454031a4c8ce33ef7a08302fa0eea"
+          },
+          {
+            "bbox": [
+              96,
+              36,
+              324,
+              423
+            ],
+            "path": "animations/splash_jump/frame_01.png",
+            "sha256": "22d81d09248c94d456db798c9d891ead893093860a2caf4eee2b8d17a742a053"
+          },
+          {
+            "bbox": [
+              87,
+              43,
+              308,
+              382
+            ],
+            "path": "animations/splash_jump/frame_02.png",
+            "sha256": "3284e1f010b36486b80fd387a25a28e20d37b49563f07181da1dd9d2a7396d68"
+          },
+          {
+            "bbox": [
+              85,
+              69,
+              358,
+              479
+            ],
+            "path": "animations/splash_jump/frame_03.png",
+            "sha256": "20f97cc1e795186092c15e9c551990b5924ab41639d877d4285070144b0173d8"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          100
+        ],
+        "loop": false,
+        "maxAlphaDifference": 0.1668,
+        "maxCenterStepPx": 99.193,
+        "maxVisibleAreaRatio": 1.0917,
+        "uniqueFrameCount": 4
+      },
+      "sunset_flower": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          451,
+          461
+        ],
+        "bboxWidthRange": [
+          124,
+          171
+        ],
+        "fps": 5,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              186,
+              26,
+              357,
+              482
+            ],
+            "path": "animations/sunset_flower/frame_00.png",
+            "sha256": "4142aa237ee1de5a5b3a8096176f89a9033f81203935391323aa9257dd3ae86c"
+          },
+          {
+            "bbox": [
+              182,
+              31,
+              306,
+              482
+            ],
+            "path": "animations/sunset_flower/frame_01.png",
+            "sha256": "01ee44a6b57d75cf1d1a87f7964f7f779a494775e17a5a751ea6c1ed70566472"
+          },
+          {
+            "bbox": [
+              170,
+              21,
+              305,
+              482
+            ],
+            "path": "animations/sunset_flower/frame_02.png",
+            "sha256": "39230c986491210e4082b6e25ce06226fddff2fafdd685e28641a006a96c6f9a"
+          },
+          {
+            "bbox": [
+              180,
+              26,
+              317,
+              482
+            ],
+            "path": "animations/sunset_flower/frame_03.png",
+            "sha256": "6950d3c2b5191db55798fa74a5d40ca1010d68527708469c4ca9baf6d3b7c25a"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": false,
+        "maxAlphaDifference": 0.048,
+        "maxCenterStepPx": 27.613,
+        "maxVisibleAreaRatio": 1.1477,
+        "uniqueFrameCount": 4
+      },
+      "walk": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          452,
+          464
+        ],
+        "bboxWidthRange": [
+          167,
+          282
+        ],
+        "fps": 12,
+        "frameCount": 8,
+        "frames": [
+          {
+            "bbox": [
+              129,
+              28,
+              383,
+              482
+            ],
+            "path": "animations/walk/frame_00.png",
+            "sha256": "ee67b0e12873971af5948db848e086667548436cefd9024ab1dd58b88a5420dd"
+          },
+          {
+            "bbox": [
+              145,
+              22,
+              366,
+              482
+            ],
+            "path": "animations/walk/frame_01.png",
+            "sha256": "d7e1060b05e5f36ca7a2ef336d2d91872ca4c03da1b4b08a1e637721dae13c88"
+          },
+          {
+            "bbox": [
+              166,
+              21,
+              333,
+              482
+            ],
+            "path": "animations/walk/frame_02.png",
+            "sha256": "c31caf5cccfa549f6469ff16ecceb97fe70d6cbb50dbb85f7cbea631921a5657"
+          },
+          {
+            "bbox": [
+              111,
+              30,
+              393,
+              482
+            ],
+            "path": "animations/walk/frame_03.png",
+            "sha256": "4529be0ac50757dbbc07cdcf768e280ed3e0199ee12006ae55c6b6c728a320d0"
+          },
+          {
+            "bbox": [
+              128,
+              25,
+              382,
+              482
+            ],
+            "path": "animations/walk/frame_04.png",
+            "sha256": "c736dfabdfb026d77acffc2f8cf86269533cf7f12d46da25f51e883abc1cc00c"
+          },
+          {
+            "bbox": [
+              165,
+              18,
+              332,
+              482
+            ],
+            "path": "animations/walk/frame_05.png",
+            "sha256": "8b49b7708d8748cbd0c2351305e2bfbb2b8539ab48a1b98f769568819fc44f29"
+          },
+          {
+            "bbox": [
+              129,
+              23,
+              329,
+              482
+            ],
+            "path": "animations/walk/frame_06.png",
+            "sha256": "ba099390e25e87effbef929860bba019cedcb590954e27f9c57d46795684d877"
+          },
+          {
+            "bbox": [
+              111,
+              26,
+              392,
+              482
+            ],
+            "path": "animations/walk/frame_07.png",
+            "sha256": "4e1ae08a6ae9a357af1bc576948af557f5e102a2dc933d19beb7c88698323b4f"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": true,
+        "maxAlphaDifference": 0.0914,
+        "maxCenterStepPx": 22.55,
+        "maxVisibleAreaRatio": 1.1802,
+        "uniqueFrameCount": 8
+      },
+      "wave": {
+        "bboxBottomRange": [
+          481,
+          481
+        ],
+        "bboxHeightRange": [
+          459,
+          460
+        ],
+        "bboxWidthRange": [
+          159,
+          178
+        ],
+        "fps": 6,
+        "frameCount": 4,
+        "frames": [
+          {
+            "bbox": [
+              168,
+              22,
+              327,
+              482
+            ],
+            "path": "animations/wave/frame_00.png",
+            "sha256": "561603eece6c68267bbdf434eff101ed1c87939e19eb3413585298248d637605"
+          },
+          {
+            "bbox": [
+              178,
+              22,
+              356,
+              482
+            ],
+            "path": "animations/wave/frame_01.png",
+            "sha256": "77a054ed0076813a73494e5747d142c2b92dcba88c508f189a58de3d13baffb4"
+          },
+          {
+            "bbox": [
+              177,
+              22,
+              352,
+              482
+            ],
+            "path": "animations/wave/frame_02.png",
+            "sha256": "4e7e8e5a19810868960c1da07c8b39e3a84dd8768c372b943abef6661a7695e9"
+          },
+          {
+            "bbox": [
+              175,
+              23,
+              336,
+              482
+            ],
+            "path": "animations/wave/frame_03.png",
+            "sha256": "9c5a1c66d70cae63ae2648749b0312675d24e00000518def454df3bb9423d051"
+          }
+        ],
+        "groundGapRange": [
+          0,
+          0
+        ],
+        "loop": false,
+        "maxAlphaDifference": 0.0382,
+        "maxCenterStepPx": 19.5,
+        "maxVisibleAreaRatio": 1.017,
+        "uniqueFrameCount": 4
+      }
+    },
+    "canvas": [
+      512,
+      512
+    ]
+  },
+  "artifact": {
+    "name": "jk-beach-summer-1.0.0.petpack",
+    "sha256": "fe71fd0232f65d4604e2ee6974da9e3a4a4edb13530c608629e6ef989724514b",
+    "sizeBytes": 4371316
+  },
+  "deterministicBuild": true,
+  "diagnostics": [
+    {
+      "code": "copy.duplicate",
+      "location": "tasks/tasks.json.tasks[0].options[1].label, tasks/tasks.json.tasks[9].options[1].label",
+      "message": "same copy appears 2 times",
+      "severity": "warning"
+    },
+    {
+      "code": "copy.duplicate",
+      "location": "tasks/tasks.json.tasks[5].options[2].label, tasks/tasks.json.tasks[17].options[2].label",
+      "message": "same copy appears 2 times",
+      "severity": "warning"
+    },
+    {
+      "code": "frame.size-pop",
+      "location": "photo_pose",
+      "message": "subject bounds vary by more than 40% within action",
+      "severity": "warning"
+    },
+    {
+      "code": "frame.size-pop",
+      "location": "shell_pick",
+      "message": "subject bounds vary by more than 40% within action",
+      "severity": "warning"
+    }
+  ],
+  "inputSha256": "4debedd76c9a861da176acc5eb388dc66d4c014b0eaf051b03906bd415ff17a3",
+  "normalization": "safe",
+  "normalizedFramePaths": [],
+  "pack": {
+    "id": "jk-beach-summer",
+    "name": "JK·海边夏日",
+    "version": "1.0.0"
+  },
+  "schemaVersion": 1,
+  "summary": {
+    "actions": 10,
+    "errors": 0,
+    "frames": 72,
+    "normalizedFrames": 0,
+    "uniqueFrames": 48,
+    "warnings": 4
+  }
+}
