@@ -105,6 +105,8 @@ scripts/sweetpet.cmd status
 | `frame.size-pop` | `photo_pose` |
 | `frame.size-pop` | `shell_pick` |
 
+`nju-campus-girlfriend` 的 `acceptedWarnings` 必须保持空数组；校园包在 CI、候选构建和发布门禁中执行零 warning 策略，不能借用 JK 包的历史白名单。
+
 底层发布器在确有已审查提示时仍需要 `--allow-warnings`，但统一入口会在调用前后校验上述精确集合。因此日常 QA 与发布应使用 `scripts/sweetpet.cmd pack ...`，不要直接使用一个笼统开关跳过提示审查。
 
 ## 6. Android 与 PetPack 部署

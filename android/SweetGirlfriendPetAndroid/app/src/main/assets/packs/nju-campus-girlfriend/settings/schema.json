@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "settings": [
+    {
+      "key": "campus_tone",
+      "label": "校园额外台词风格",
+      "description": "在点击、待机和学习场景中加入对应风格的候选台词。",
+      "type": "choice",
+      "default": "gentle",
+      "options": [
+        {"value": "lively", "label": "草坪元气"},
+        {"value": "gentle", "label": "林荫温柔"},
+        {"value": "study", "label": "自习搭档"}
+      ]
+    },
+    {
+      "key": "study_companion",
+      "label": "学习陪伴台词",
+      "description": "在上课、自习与午后专注时段加入轻量学习提醒。",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "autumn_chatter",
+      "label": "金陵秋日台词",
+      "description": "在晴朗或多云天气加入梧桐叶、草坪和校园散步内容。",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "late_study_chatter",
+      "label": "深夜收尾台词",
+      "description": "在深夜加入保存进度、整理桌面和按时休息的提醒。",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}

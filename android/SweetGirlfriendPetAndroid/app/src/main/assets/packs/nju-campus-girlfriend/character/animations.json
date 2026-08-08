@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "canvas": [512, 512],
+  "actions": {
+    "idle": {
+      "fps": 4,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "dialogue", "campus"]
+      },
+      "frames": [
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_02.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_02.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_03.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_01.png",
+        "animations/idle/frame_00.png",
+        "animations/idle/frame_02.png"
+      ]
+    },
+    "walk": {
+      "fps": 12,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "pathfinding", "campus"]
+      },
+      "frames": [
+        "animations/walk/frame_00.png",
+        "animations/walk/frame_01.png",
+        "animations/walk/frame_02.png",
+        "animations/walk/frame_03.png",
+        "animations/walk/frame_04.png",
+        "animations/walk/frame_05.png",
+        "animations/walk/frame_06.png",
+        "animations/walk/frame_07.png"
+      ]
+    },
+    "run": {
+      "fps": 16,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "right",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "align-surface",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "border", "arcade", "pathfinding", "campus"]
+      },
+      "frames": [
+        "animations/run/frame_00.png",
+        "animations/run/frame_01.png",
+        "animations/run/frame_02.png",
+        "animations/run/frame_03.png",
+        "animations/run/frame_04.png",
+        "animations/run/frame_05.png",
+        "animations/run/frame_06.png",
+        "animations/run/frame_07.png"
+      ]
+    },
+    "wave": {
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "greeting", "dialogue", "task", "campus"]
+      },
+      "frames": [
+        "animations/wave/frame_00.png",
+        "animations/wave/frame_01.png",
+        "animations/wave/frame_02.png",
+        "animations/wave/frame_03.png",
+        "animations/wave/frame_02.png",
+        "animations/wave/frame_01.png"
+      ]
+    },
+    "photo_pose": {
+      "fps": 6,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "photo", "task", "lawn", "campus"]
+      },
+      "frames": [
+        "animations/photo_pose/frame_00.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_00.png",
+        "animations/photo_pose/frame_01.png",
+        "animations/photo_pose/frame_00.png"
+      ]
+    },
+    "autumn_leaf": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "autumn", "leaf", "campus"]
+      },
+      "frames": [
+        "animations/autumn_leaf/frame_00.png",
+        "animations/autumn_leaf/frame_01.png",
+        "animations/autumn_leaf/frame_02.png",
+        "animations/autumn_leaf/frame_03.png",
+        "animations/autumn_leaf/frame_03.png",
+        "animations/autumn_leaf/frame_02.png"
+      ]
+    },
+    "chalk_explain": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "study", "classroom"]
+      },
+      "frames": [
+        "animations/chalk_explain/frame_00.png",
+        "animations/chalk_explain/frame_01.png",
+        "animations/chalk_explain/frame_02.png",
+        "animations/chalk_explain/frame_03.png",
+        "animations/chalk_explain/frame_03.png",
+        "animations/chalk_explain/frame_00.png"
+      ]
+    },
+    "gift_hold": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "gift", "handmade", "campus"]
+      },
+      "frames": [
+        "animations/gift_hold/frame_00.png",
+        "animations/gift_hold/frame_01.png",
+        "animations/gift_hold/frame_02.png",
+        "animations/gift_hold/frame_03.png",
+        "animations/gift_hold/frame_03.png",
+        "animations/gift_hold/frame_02.png"
+      ]
+    },
+    "grass_rest": {
+      "fps": 3,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "lawn", "study-break", "campus"]
+      },
+      "frames": [
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_01.png",
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_01.png",
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_02.png",
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_01.png",
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_03.png",
+        "animations/grass_rest/frame_00.png",
+        "animations/grass_rest/frame_01.png"
+      ]
+    },
+    "glasses_adjust": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "focus", "study"]
+      },
+      "frames": [
+        "animations/glasses_adjust/frame_00.png",
+        "animations/glasses_adjust/frame_01.png",
+        "animations/glasses_adjust/frame_02.png",
+        "animations/glasses_adjust/frame_03.png",
+        "animations/glasses_adjust/frame_03.png"
+      ]
+    },
+    "flower_spot": {
+      "fps": 5,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "dialogue", "task", "flower", "campus"]
+      },
+      "frames": [
+        "animations/flower_spot/frame_00.png",
+        "animations/flower_spot/frame_01.png",
+        "animations/flower_spot/frame_02.png",
+        "animations/flower_spot/frame_03.png",
+        "animations/flower_spot/frame_03.png",
+        "animations/flower_spot/frame_00.png"
+      ]
+    },
+    "jump_celebrate": {
+      "fps": 8,
+      "loop": false,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "task", "celebrate", "jump", "airborne", "campus"]
+      },
+      "frames": [
+        "animations/jump_celebrate/frame_00.png",
+        "animations/jump_celebrate/frame_01.png",
+        "animations/jump_celebrate/frame_02.png",
+        "animations/jump_celebrate/frame_02.png",
+        "animations/jump_celebrate/frame_03.png",
+        "animations/jump_celebrate/frame_03.png"
+      ]
+    },
+    "sleep": {
+      "fps": 2,
+      "loop": true,
+      "motion": {
+        "defaultFacing": "front",
+        "supportsHorizontalMirror": true,
+        "rotationPolicy": "upright",
+        "groundAnchor": [0.5, 0.94],
+        "sceneTags": ["ground", "rest", "sleep", "late-night", "campus"]
+      },
+      "frames": [
+        "animations/sleep/frame_00.png",
+        "animations/sleep/frame_01.png",
+        "animations/sleep/frame_00.png",
+        "animations/sleep/frame_03.png",
+        "animations/sleep/frame_00.png",
+        "animations/sleep/frame_02.png",
+        "animations/sleep/frame_00.png",
+        "animations/sleep/frame_03.png"
+      ]
+    }
+  }
+}

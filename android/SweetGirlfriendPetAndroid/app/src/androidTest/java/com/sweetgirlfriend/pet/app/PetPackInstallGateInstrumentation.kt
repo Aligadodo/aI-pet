@@ -75,9 +75,23 @@ class PetPackInstallGateInstrumentation : Instrumentation() {
                 require(inspection.archiveSha256.equals(expectedSha256, ignoreCase = true)) {
                     "Preflight archive SHA-256 changed after staging"
                 }
+                val preflightDuplicate =
+                    inspection.isDuplicateContent || inspection.isExactArchiveDuplicate
                 val installed = installer.install(archive, inspection)
-                require(installed is PackInstallResult.Success && !installed.unchanged) {
+                require(installed is PackInstallResult.Success) {
                     "Initial install failed: $installed"
+                }
+                require(installed.unchanged == preflightDuplicate) {
+                    "Initial install disposition contradicted preflight: " +
+                        "unchanged=${installed.unchanged}, " +
+                        "duplicateContent=${inspection.isDuplicateContent}, " +
+                        "exactArchiveDuplicate=${inspection.isExactArchiveDuplicate}"
+                }
+                val installDisposition = when {
+                    !installed.unchanged -> "installed"
+                    inspection.installedVersion == null &&
+                        inspection.bundledVersion == inspection.version -> "bundled-duplicate"
+                    else -> "installed-duplicate"
                 }
 
                 // A fresh repository instance simulates a process restart/cold reload.
@@ -112,7 +126,7 @@ class PetPackInstallGateInstrumentation : Instrumentation() {
                 resultCode = Activity.RESULT_OK
                 resultMessage =
                     "PETPACK_GATE_PASS id=${inspection.packId} version=${inspection.version} " +
-                    "actions=${actions.size} tasks=${tasks.size}"
+                    "install=$installDisposition actions=${actions.size} tasks=${tasks.size}"
             }
         } catch (error: Throwable) {
             resultCode = Activity.RESULT_CANCELED

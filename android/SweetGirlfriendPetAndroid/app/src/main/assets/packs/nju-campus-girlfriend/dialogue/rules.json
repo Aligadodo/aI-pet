@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 2,
+  "rules": [
+    {
+      "id": "early-campus-morning",
+      "event": "morning",
+      "when": {"hourStart": 5, "hourEnd": 8, "chance": 0.85},
+      "lines": [
+        "清晨的路还很安静，给今天留一个从容的开头吧。",
+        "第一束光已到教室门口，先喝水再开始今天。"
+      ]
+    },
+    {
+      "id": "monday-first-page",
+      "event": "morning",
+      "when": {"dayOfWeek": 1, "hourStart": 6, "hourEnd": 10},
+      "lines": [
+        "新一周不用一次跑完，先把今天这一页写好。",
+        "星期一慢慢启动，我陪你完成第一个小目标。"
+      ]
+    },
+    {
+      "id": "saturday-campus-walk",
+      "event": "morning",
+      "when": {"dayOfWeek": 6, "hourStart": 7, "hourEnd": 11},
+      "lines": [
+        "周六早安，今天的校园路线可以随一片叶子拐弯。",
+        "不用赶上课铃，先吃好早餐再决定去哪儿。"
+      ]
+    },
+    {
+      "id": "class-time-tap",
+      "event": "tap",
+      "when": {"hourStart": 8, "hourEnd": 11, "settingKey": "study_companion", "settingEquals": "true", "chance": 0.8},
+      "lines": [
+        "上课时段收到，我把声音放轻，只帮你守住重点。",
+        "先记关键词，没听懂的地方下课再慢慢补。"
+      ]
+    },
+    {
+      "id": "study-tone-double-tap",
+      "event": "double_tap",
+      "when": {"settingKey": "campus_tone", "settingEquals": "study", "chance": 0.85},
+      "lines": [
+        "自习搭档已就位，选一件最小的事立刻开工吧。",
+        "我们约定专心十分钟，结束后再一起伸个懒腰。"
+      ]
+    },
+    {
+      "id": "lively-campus-tap",
+      "event": "tap",
+      "when": {"settingKey": "campus_tone", "settingEquals": "lively", "chance": 0.8},
+      "lines": [
+        "草坪元气到站，今天也一起张开手臂向前跑！",
+        "点名成功，送你一个能把坏心情弹走的跳跃。"
+      ]
+    },
+    {
+      "id": "gentle-campus-idle",
+      "event": "idle",
+      "when": {"settingKey": "campus_tone", "settingEquals": "gentle", "chance": 0.65},
+      "lines": [
+        "你安心做事，我坐在林荫一样安静的屏幕边。",
+        "等键盘声慢下来，我再把那片好看的叶子递给你。"
+      ]
+    },
+    {
+      "id": "afternoon-focus",
+      "event": "idle",
+      "when": {"hourStart": 14, "hourEnd": 17, "settingKey": "study_companion", "settingEquals": "true", "chance": 0.72},
+      "lines": [
+        "午后注意力容易散，我们只守住眼前这一小段。",
+        "先把通知放一边，我在桌角陪你完成当前步骤。"
+      ]
+    },
+    {
+      "id": "lunch-class-break",
+      "event": "lunch",
+      "when": {"hourStart": 11, "hourEnd": 13, "chance": 0.9},
+      "lines": [
+        "午间铃声响啦，合上这一页再去好好吃饭。",
+        "先补充能量，下午的笔记才有力气继续长大。"
+      ]
+    },
+    {
+      "id": "evening-return-route",
+      "event": "evening",
+      "when": {"hourStart": 18, "hourEnd": 21, "chance": 0.8},
+      "lines": [
+        "回程的树影拉长了，走路别只顾着看手机。",
+        "今天的校园故事快收尾了，挑一个瞬间带回去吧。"
+      ]
+    },
+    {
+      "id": "friday-evening",
+      "event": "evening",
+      "when": {"dayOfWeek": 5, "hourStart": 17, "hourEnd": 22},
+      "lines": [
+        "星期五的晚风到啦，这周辛苦的部分先放下来。",
+        "周末正在靠近，给自己安排一件真正期待的小事吧。"
+      ]
+    },
+    {
+      "id": "late-study-close",
+      "event": "late_night",
+      "when": {"hourStart": 23, "hourEnd": 3, "settingKey": "late_study_chatter", "settingEquals": "true"},
+      "lines": [
+        "深夜收尾模式开启：保存、备份、写下明天第一步。",
+        "不要再开新任务啦，我陪你把最后这一页合上。"
+      ]
+    },
+    {
+      "id": "clear-autumn-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "clear", "settingKey": "autumn_chatter", "settingEquals": "true", "chance": 0.85},
+      "lines": [
+        "{city}天气晴朗，梧桐叶的颜色应该很好看。",
+        "晴天适合走一小段校园路，也别忘了防晒和补水。"
+      ]
+    },
+    {
+      "id": "cloudy-autumn-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "cloudy", "settingKey": "autumn_chatter", "settingEquals": "true", "chance": 0.8},
+      "lines": [
+        "云层把校园光线调柔了，正适合拍一张安静的照片。",
+        "多云的林荫道也有层次，散步时记得看脚下落叶。"
+      ]
+    },
+    {
+      "id": "rain-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "rain"},
+      "lines": [
+        "{city}有雨，雨伞和防滑的鞋今天都要签到。",
+        "下雨时台阶容易滑，宁可走慢一点也别赶。"
+      ]
+    },
+    {
+      "id": "storm-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "storm"},
+      "lines": [
+        "风雨较强时先减少外出，在安全室内等它过去。",
+        "雷雨天气别在高树和空旷草坪停留，路线要及时调整。"
+      ]
+    },
+    {
+      "id": "windy-hat-check",
+      "event": "weather",
+      "when": {"weatherEquals": "windy"},
+      "lines": [
+        "今天风大，我先按住帽子，你也留意高处落物。",
+        "格纹包的带子要背稳，迎风走路别跑得太急。"
+      ]
+    },
+    {
+      "id": "hot-campus",
+      "event": "weather",
+      "when": {"temperatureMin": 30},
+      "lines": [
+        "现在大约 {temperature}℃，避开暴晒并及时补水。",
+        "高温时别在草坪硬撑，阴凉处休息同样算校园时光。"
+      ]
+    },
+    {
+      "id": "cold-campus",
+      "event": "weather",
+      "when": {"temperatureMax": 10},
+      "lines": [
+        "现在大约 {temperature}℃，卫衣外面再加一层会更舒服。",
+        "降温消息送达，手脚暖和了再慢慢走校园。"
+      ]
+    },
+    {
+      "id": "fog-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "fog"},
+      "lines": [
+        "今天有雾，过路口时多观察，骑行也要放慢速度。",
+        "能见度低就走熟悉路线，把耳机音量也调小一些。"
+      ]
+    },
+    {
+      "id": "snow-campus",
+      "event": "weather",
+      "when": {"weatherEquals": "snow"},
+      "lines": [
+        "下雪啦，赏景之前先确认鞋底防滑和回程时间。",
+        "屋檐与树下可能落雪，拍照也要选安全的位置。"
+      ]
+    },
+    {
+      "id": "sunday-evening-plan",
+      "event": "evening",
+      "when": {"dayOfWeek": 7, "hourStart": 18, "hourEnd": 22},
+      "lines": [
+        "周日晚上只排明天最重要的三件事，别把清单塞太满。",
+        "新一周的书包可以先收好，剩下时间留给自己。"
+      ]
+    },
+    {
+      "id": "midday-tap-break",
+      "event": "tap",
+      "when": {"hourStart": 12, "hourEnd": 14, "chance": 0.75},
+      "lines": [
+        "午间被你找到啦，先确认自己有没有好好吃饭。",
+        "这个时段适合眯一小会儿，不必把每分钟都排满。"
+      ]
+    },
+    {
+      "id": "night-double-tap",
+      "event": "double_tap",
+      "when": {"hourStart": 21, "hourEnd": 23, "settingKey": "late_study_chatter", "settingEquals": "true", "chance": 0.8},
+      "lines": [
+        "今晚的双击暗号是：做完这一小段就准备休息。",
+        "我替你保管未完成的焦虑，明天再按顺序取回来。"
+      ]
+    }
+  ]
+}

@@ -23,10 +23,18 @@ if [ "$ready" -ne 1 ]; then
   exit 1
 fi
 
+SWEETPET_REQUIRE_CAMPUS_BUNDLE=1 python scripts/test_bundled_pack_assets.py
+
 cd petpack/PetPack-v2
 python tools/petpack.py publish packs/jk-beach-summer \
   --output "$RUNNER_TEMP/jk-beach-summer-1.0.0.petpack" \
   --reports "$RUNNER_TEMP/jk-beach-report" \
   --allow-warnings \
+  --android-project ../../android/SweetGirlfriendPetAndroid \
+  --serial emulator-5554
+
+python tools/petpack.py publish packs/nju-campus-girlfriend \
+  --output "$RUNNER_TEMP/nju-campus-girlfriend-1.0.0.petpack" \
+  --reports "$RUNNER_TEMP/nju-campus-girlfriend-report" \
   --android-project ../../android/SweetGirlfriendPetAndroid \
   --serial emulator-5554

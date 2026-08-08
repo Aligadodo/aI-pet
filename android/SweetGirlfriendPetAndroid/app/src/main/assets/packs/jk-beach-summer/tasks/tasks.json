@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 2,
+  "tasks": [
+    {
+      "id": "summer-hydration",
+      "title": "夏日补水",
+      "prompt": "浪花都来报到啦，你的水杯今天报到几次了？",
+      "action": "wave",
+      "cooldownMinutes": 75,
+      "options": [
+        {"id": "drink", "label": "喝一口", "response": "干杯！清清凉凉地继续今天。", "action": "wave"},
+        {"id": "later", "label": "十分钟后", "response": "好，我先把小水滴提醒放在贝壳里。", "action": "idle", "snoozeMinutes": 10}
+      ]
+    },
+    {
+      "id": "horizon-eye-break",
+      "title": "望向海平线",
+      "prompt": "看屏幕有一会儿了，要不要把视线投向更远的地方？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 60,
+      "options": [
+        {"id": "rest", "label": "远眺一分钟", "response": "肩膀放松，慢慢眨眼，我陪你看海平线。", "action": "sea_breeze"},
+        {"id": "busy", "label": "还在忙", "response": "收到，我先退到屏幕边缘，二十分钟后再来。", "action": "idle", "snoozeMinutes": 20}
+      ]
+    },
+    {
+      "id": "sunscreen-check",
+      "title": "防晒补给站",
+      "prompt": "如果要出门，防晒、帽子和水都准备好了吗？",
+      "action": "wave",
+      "cooldownMinutes": 240,
+      "when": {"hourStart": 8, "hourEnd": 16, "weatherIn": ["clear", "cloudy", "hot"]},
+      "options": [
+        {"id": "ready", "label": "都准备好啦", "response": "准备充分，去和夏天好好见面吧。", "action": "photo_pose"},
+        {"id": "check", "label": "现在检查", "response": "我帮你念清单：防晒、遮阳、饮水。", "action": "wave"},
+        {"id": "indoors", "label": "今天不出门", "response": "那就在室内拥有一片舒服的小海湾。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "shell-treasure",
+      "title": "贝壳寻宝",
+      "prompt": "沙滩上好像有一枚会发光的贝壳，要和我一起找吗？",
+      "action": "shell_pick",
+      "cooldownMinutes": 210,
+      "options": [
+        {"id": "find", "label": "一起找", "response": "找到啦！把它送给今天认真生活的你。", "action": "shell_pick"},
+        {"id": "listen", "label": "听听海声", "response": "靠近一点，贝壳里藏着一小段潮汐。", "action": "sea_breeze"},
+        {"id": "later", "label": "先标记位置", "response": "好，我在沙滩地图上画一颗小星星。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "splash-jump",
+      "title": "踏浪跳跃",
+      "prompt": "浪花要碰到脚尖啦，要不要一起跳过这一朵？",
+      "action": "splash_jump",
+      "cooldownMinutes": 240,
+      "options": [
+        {"id": "jump", "label": "三二一，跳", "response": "成功！鞋袜和烦恼都没有被浪花追上。", "action": "splash_jump"},
+        {"id": "photo", "label": "抓拍一下", "response": "咔嚓——这一跳被晚风好好接住啦。", "action": "photo_pose"},
+        {"id": "watch", "label": "看浪就好", "response": "好呀，安静看浪也是很完整的快乐。", "action": "sea_breeze"}
+      ]
+    },
+    {
+      "id": "sea-breeze-breath",
+      "title": "海风呼吸",
+      "prompt": "跟着海风吸气四拍、停一拍、再慢慢呼气，好吗？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 120,
+      "options": [
+        {"id": "start", "label": "开始呼吸", "response": "吸气——停一下——呼气，把肩膀也放下来。", "action": "sea_breeze"},
+        {"id": "once", "label": "只做一次", "response": "一次也很好，身体已经收到你的照顾。", "action": "sea_breeze"},
+        {"id": "later", "label": "稍后再做", "response": "好，我把这阵海风留到十五分钟后。", "action": "idle", "snoozeMinutes": 15}
+      ]
+    },
+    {
+      "id": "sunset-flower-gift",
+      "title": "夕阳花束",
+      "prompt": "晚霞把花束染成橘粉色了，你愿意收下吗？",
+      "action": "sunset_flower",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 17, "hourEnd": 20},
+      "options": [
+        {"id": "accept", "label": "收下花束", "response": "送给今天努力过的你，也送给此刻的好心情。", "action": "sunset_flower"},
+        {"id": "share", "label": "一起抱着", "response": "那我们一人抱住一半，把晚霞也夹在中间。", "action": "photo_pose"},
+        {"id": "save", "label": "做成纪念", "response": "已经替你保存成今天的夕阳书签。", "action": "sunset_flower"}
+      ]
+    },
+    {
+      "id": "night-tide-rest",
+      "title": "夜潮休息",
+      "prompt": "夜潮变轻了，今天是不是也该慢慢靠岸？",
+      "action": "sleepy_pose",
+      "cooldownMinutes": 480,
+      "when": {"hourStart": 22, "hourEnd": 3},
+      "options": [
+        {"id": "sleep", "label": "准备休息", "response": "晚安，我把潮声调小，陪你到屏幕熄灭。", "action": "sleepy_pose"},
+        {"id": "finish", "label": "收尾五分钟", "response": "好，先保存进度，五分钟后就靠岸。", "action": "idle", "snoozeMinutes": 5},
+        {"id": "quiet", "label": "安静陪我", "response": "嗯，我不说话，只留一小段轻轻的潮声。", "action": "sleepy_pose"}
+      ]
+    },
+    {
+      "id": "morning-tide-plan",
+      "title": "晨潮小目标",
+      "prompt": "新潮汐开始啦，今天最重要的一件事是什么？",
+      "action": "wave",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 6, "hourEnd": 10},
+      "options": [
+        {"id": "picked", "label": "已经想好", "response": "很好，先留下最清晰的一串脚印。", "action": "wave"},
+        {"id": "choose", "label": "帮我缩小范围", "response": "从最重要、最短或最让你安心的一件开始。", "action": "sea_breeze"},
+        {"id": "later", "label": "晚点决定", "response": "不急，晨浪也会先在岸边试探一下。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "lunch-shade",
+      "title": "午间补给站",
+      "prompt": "到午饭时间啦，要不要去吃饭，也让眼睛离开屏幕一会儿？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 360,
+      "when": {"hourStart": 11, "hourEnd": 13},
+      "options": [
+        {"id": "eat", "label": "这就去吃", "response": "好耶，桌面交给我，你慢慢吃。", "action": "wave"},
+        {"id": "ten", "label": "十分钟后", "response": "可以，但别让午饭被潮水推得太远。", "action": "idle", "snoozeMinutes": 10}
+      ]
+    },
+    {
+      "id": "sunny-cooldown",
+      "title": "晴热降温",
+      "prompt": "天气晴热时别硬撑，要不要去阴凉处喝点水？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 180,
+      "when": {"hourStart": 10, "hourEnd": 17, "weatherIn": ["hot"]},
+      "options": [
+        {"id": "cool", "label": "去降温", "response": "好，慢慢喝水，让体感先舒服下来。", "action": "sea_breeze"},
+        {"id": "indoors", "label": "我在室内", "response": "收到，也别让空调风一直对着自己吹。", "action": "idle"},
+        {"id": "later", "label": "稍后提醒", "response": "那我十五分钟后带着小水滴再来。", "action": "idle", "snoozeMinutes": 15}
+      ]
+    },
+    {
+      "id": "rainy-shell-craft",
+      "title": "雨天贝壳工坊",
+      "prompt": "外面有雨，我们在室内给想象中的贝壳画花纹吧？",
+      "action": "shell_pick",
+      "cooldownMinutes": 360,
+      "when": {"weatherIn": ["rain", "storm"]},
+      "options": [
+        {"id": "paint", "label": "画一颗星", "response": "完成！这枚贝壳负责保管你的愿望。", "action": "shell_pick"},
+        {"id": "listen", "label": "听雨声", "response": "雨声和潮声叠在一起，也是一首歌。", "action": "sea_breeze"},
+        {"id": "work", "label": "先继续忙", "response": "好，我把工坊收在桌边，不打扰你。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "windy-ribbon",
+      "title": "海风蝴蝶结",
+      "prompt": "风有点大，陪我确认蝴蝶结和随身小物都拿稳了吗？",
+      "action": "wave",
+      "cooldownMinutes": 300,
+      "when": {"weatherIn": ["windy"]},
+      "options": [
+        {"id": "secure", "label": "都拿稳了", "response": "安全检查完成，慢一点走就好。", "action": "wave"},
+        {"id": "indoors", "label": "暂不出门", "response": "好选择，今天在窗边听风就够啦。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "summer-photo-memory",
+      "title": "夏日纪念照",
+      "prompt": "今天也留下一张海蓝色的笑脸，好不好？",
+      "action": "photo_pose",
+      "cooldownMinutes": 300,
+      "options": [
+        {"id": "heart", "label": "比个爱心", "response": "三、二、一——爱心和海风都看镜头！", "action": "photo_pose"},
+        {"id": "wave", "label": "挥手抓拍", "response": "咔嚓，夏日问候已经保存。", "action": "wave"},
+        {"id": "later", "label": "下次再拍", "response": "没关系，最好的光也会再来。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "golden-hour-photo",
+      "title": "黄金时刻",
+      "prompt": "现在的光像蜂蜜一样，要不要拍一张晚霞合影？",
+      "action": "sunset_flower",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 16, "hourEnd": 19, "weatherIn": ["clear", "cloudy", "hot"]},
+      "options": [
+        {"id": "shoot", "label": "一起拍", "response": "笑一个，夕阳正在我们身后按下快门。", "action": "photo_pose"},
+        {"id": "flower", "label": "抱花拍", "response": "花束、晚霞和你，画面已经完整啦。", "action": "sunset_flower"},
+        {"id": "watch", "label": "只看晚霞", "response": "好，记在心里的照片也不会褪色。", "action": "sea_breeze"}
+      ]
+    },
+    {
+      "id": "focus-tide",
+      "title": "十分钟专注潮",
+      "prompt": "挑一件小事，和我一起冲过十分钟的专注浪头吗？",
+      "action": "run",
+      "cooldownMinutes": 150,
+      "options": [
+        {"id": "start", "label": "现在开始", "response": "出发，我退到边缘陪跑，不打断你。", "action": "run"},
+        {"id": "small", "label": "先做两分钟", "response": "很好，小浪花也能把船往前推。", "action": "walk"},
+        {"id": "later", "label": "稍后再冲", "response": "可以，二十五分钟后再看状态。", "action": "idle", "snoozeMinutes": 25}
+      ]
+    },
+    {
+      "id": "breeze-stretch",
+      "title": "迎风伸展",
+      "prompt": "坐久了，陪我把手臂伸向海风、放松肩颈吧？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 120,
+      "options": [
+        {"id": "stretch", "label": "一起伸展", "response": "慢慢抬手，不要憋气，舒服就好。", "action": "sea_breeze"},
+        {"id": "walk", "label": "走两步", "response": "好，我们沿着桌面海岸线慢慢走。", "action": "walk"},
+        {"id": "done", "label": "刚活动过", "response": "收到，继续保持舒服的坐姿。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "clean-beach",
+      "title": "三分钟净滩",
+      "prompt": "来做一个小小净滩任务：顺手整理三样桌面或身边物品？",
+      "action": "walk",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "clean", "label": "整理三样", "response": "完成一小片清爽海岸，给你一枚环保海星。", "action": "shell_pick"},
+        {"id": "one", "label": "先整理一样", "response": "一样也很棒，干净是从小动作开始的。", "action": "walk"},
+        {"id": "later", "label": "稍后再做", "response": "好，我把小夹子放在这里等你。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "wish-bottle",
+      "title": "潮汐愿望瓶",
+      "prompt": "把今天一个小愿望写进瓶子里，等未来的潮水送回来吗？",
+      "action": "sunset_flower",
+      "cooldownMinutes": 720,
+      "options": [
+        {"id": "write", "label": "写一个愿望", "response": "封好啦，我替你在瓶口系上粉色丝带。", "action": "sunset_flower"},
+        {"id": "gratitude", "label": "写一件感谢", "response": "这份温柔不会漂走，它已经留在今天。", "action": "photo_pose"},
+        {"id": "secret", "label": "先保密", "response": "好的，秘密只在贝壳里轻轻响。", "action": "shell_pick"}
+      ]
+    },
+    {
+      "id": "summer-playlist",
+      "title": "海风歌单",
+      "prompt": "现在的心情适合哪一种海边旋律？",
+      "action": "photo_pose",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "bright", "label": "晴朗轻快", "response": "收到，今天的节拍像踩着浪花跑。", "action": "splash_jump"},
+        {"id": "soft", "label": "温柔慢歌", "response": "那就让旋律像傍晚的潮水，慢慢靠近。", "action": "sea_breeze"},
+        {"id": "quiet", "label": "只听潮声", "response": "好，留白也是歌单里很重要的一首。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "cloud-guess",
+      "title": "海上云朵猜想",
+      "prompt": "云层像正在变形的小岛，你觉得它更像什么？",
+      "action": "sea_breeze",
+      "cooldownMinutes": 300,
+      "when": {"weatherIn": ["cloudy"]},
+      "options": [
+        {"id": "whale", "label": "一只鲸鱼", "response": "它正从云海里摆尾巴，方向是好心情。", "action": "sea_breeze"},
+        {"id": "castle", "label": "一座城堡", "response": "那我们给城堡留一扇看海的窗。", "action": "photo_pose"},
+        {"id": "secret", "label": "像一个秘密", "response": "好，我不追问，陪它慢慢飘过去。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "shoreline-stroll",
+      "title": "轻松海岸散步",
+      "prompt": "不赶时间，陪我沿桌面海岸线慢慢走一小段吗？",
+      "action": "walk",
+      "cooldownMinutes": 240,
+      "options": [
+        {"id": "walk", "label": "出发散步", "response": "走吧，步子小一点，沿途的风景才看得清。", "action": "walk"},
+        {"id": "edge", "label": "在边缘走", "response": "收到，我贴着屏幕边，不影响你的内容。", "action": "walk"},
+        {"id": "rest", "label": "今天休息", "response": "好，原地听海也算一种旅行。", "action": "sleepy_pose"}
+      ]
+    },
+    {
+      "id": "evening-shell-review",
+      "title": "今日贝壳收藏",
+      "prompt": "今天有没有一件值得装进纪念贝壳的小事？",
+      "action": "sunset_flower",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 18, "hourEnd": 22},
+      "options": [
+        {"id": "one", "label": "有一件", "response": "认真收藏起来，这份努力不是理所当然。", "action": "sunset_flower"},
+        {"id": "hard", "label": "今天有点难", "response": "难的一天也走到了岸边，这已经很了不起。", "action": "sea_breeze"},
+        {"id": "quiet", "label": "暂时不想说", "response": "没关系，我抱着花安静陪你一会儿。", "action": "sleepy_pose"}
+      ]
+    },
+    {
+      "id": "gravity-drift-invite",
+      "title": "贝壳重力漂流",
+      "prompt": "轻轻倾斜手机，看看重力会把我和贝壳带向哪片海岸？",
+      "action": "shell_pick",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "play", "label": "开始漂流", "response": "重力感应就位，记得在边缘接住我！", "action": "splash_jump", "playMode": "GRAVITY"},
+        {"id": "skip", "label": "先不漂流", "response": "好，我把贝壳稳稳放回岸边。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "border-walk-invite",
+      "title": "屏幕海岸散步",
+      "prompt": "要不要把四条屏幕边框变成一圈海岸线？",
+      "action": "walk",
+      "cooldownMinutes": 420,
+      "options": [
+        {"id": "play", "label": "沿岸散步", "response": "出发，我会顺着四条边和转角稳稳走。", "action": "walk", "playMode": "BORDER_WALK"},
+        {"id": "skip", "label": "原地看海", "response": "也好，风景不会因为停下就消失。", "action": "sea_breeze"}
+      ]
+    },
+    {
+      "id": "border-run-invite",
+      "title": "追浪跑",
+      "prompt": "浪花沿着屏幕边跑过去啦，要和我追一圈吗？",
+      "action": "run",
+      "cooldownMinutes": 420,
+      "options": [
+        {"id": "play", "label": "追上浪花", "response": "开跑！我会让脚底贴住每一段海岸线。", "action": "run", "playMode": "BORDER_RUN"},
+        {"id": "walk", "label": "慢慢走", "response": "没问题，换成舒服的沿岸散步。", "action": "walk", "playMode": "BORDER_WALK"},
+        {"id": "skip", "label": "下次再追", "response": "好，下一朵浪花我也会替你留意。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "reef-hide-seek-invite",
+      "title": "礁石捉迷藏",
+      "prompt": "回到主页后，我要躲进空白的礁石缝里，你能找到我吗？",
+      "action": "photo_pose",
+      "cooldownMinutes": 480,
+      "options": [
+        {"id": "play", "label": "开始找你", "response": "请回到主页，我先带着小贝壳跑一步啦！", "action": "run", "playMode": "HIDE_SEEK"},
+        {"id": "skip", "label": "下次再找", "response": "好，我把最佳藏身点继续保密。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "sandcastle-bomber-invite",
+      "title": "沙堡守卫",
+      "prompt": "安全拟态沙堡遭遇泡泡炸弹，要一起规划路线吗？",
+      "action": "run",
+      "cooldownMinutes": 540,
+      "options": [
+        {"id": "play", "label": "守护沙堡", "response": "开始寻路！只操作游戏拟态元素，真实桌面不会改变。", "action": "run", "playMode": "BOMBER"},
+        {"id": "skip", "label": "和平堆沙", "response": "好，今天只建城堡，不放泡泡炸弹。", "action": "shell_pick"}
+      ]
+    },
+    {
+      "id": "fish-shell-snake-invite",
+      "title": "小鱼吃贝壳",
+      "prompt": "让小鱼头像沿海岸吃掉拟态贝壳，再把它们全部吐回来吗？",
+      "action": "shell_pick",
+      "cooldownMinutes": 540,
+      "options": [
+        {"id": "play", "label": "开始觅食", "response": "出发！真实图标不会移动，抓住头像即可结束。", "action": "run", "playMode": "SNAKE"},
+        {"id": "skip", "label": "先喂海风", "response": "好吧，小鱼今天先做一名文明游客。", "action": "sea_breeze"}
+      ]
+    }
+  ]
+}

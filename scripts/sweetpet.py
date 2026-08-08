@@ -653,6 +653,13 @@ def stage_android_test(context: PipelineContext) -> None:
         ),
         cwd=context.android_dir,
     )
+    context.command(
+        "android-test",
+        "bundled-pack-assets",
+        [sys.executable, context.root / "scripts" / "test_bundled_pack_assets.py"],
+        cwd=context.root,
+        env={"SWEETPET_REQUIRE_CAMPUS_BUNDLE": "1"},
+    )
 
 
 def locate_android_apk(context: PipelineContext, android_test: bool) -> Path:

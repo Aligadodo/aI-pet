@@ -20,10 +20,12 @@ SPEC.loader.exec_module(sweetpet)
 class FakeExecutor(sweetpet.Executor):
     def __init__(self, exit_codes: list[int] | None = None) -> None:
         self.calls: list[tuple[list[str], Path, Path]] = []
+        self.envs: list[dict[str, str] | None] = []
         self.exit_codes = list(exit_codes or [])
 
     def run(self, argv, *, cwd, log_path, env=None):
         self.calls.append((list(argv), cwd, log_path))
+        self.envs.append(dict(env) if env is not None else None)
         return self.exit_codes.pop(0) if self.exit_codes else 0
 
 
@@ -54,6 +56,40 @@ def minimal_config(root: Path) -> dict:
 
 
 class SweetPetAutomationTest(unittest.TestCase):
+    def test_android_test_always_verifies_complete_bundled_pack_set(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            context = sweetpet.PipelineContext(
+                root=root,
+                config=minimal_config(root),
+                run_id="android-bundle-check",
+                run_dir=root / "outputs" / "android-bundle-check",
+                dry_run=False,
+                keep_going=False,
+                selected_packs=(),
+                serial=None,
+                adb_override=None,
+                allow_physical_device=False,
+                promote=False,
+                archive=None,
+                executor=FakeExecutor(),
+            )
+
+            sweetpet.stage_android_test(context)
+
+            self.assertEqual(len(context.executor.calls), 2)
+            self.assertEqual(
+                context.executor.calls[1][0],
+                [
+                    sys.executable,
+                    str(root / "scripts" / "test_bundled_pack_assets.py"),
+                ],
+            )
+            self.assertEqual(
+                context.executor.envs[1],
+                {"SWEETPET_REQUIRE_CAMPUS_BUNDLE": "1"},
+            )
+
     def test_dependency_order_closes_and_deduplicates(self) -> None:
         order = sweetpet.dependency_order(
             ["petpack-qa", "petpack-validate", "petpack-qa"]

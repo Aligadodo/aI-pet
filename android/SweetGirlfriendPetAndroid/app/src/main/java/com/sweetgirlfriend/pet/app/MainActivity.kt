@@ -244,7 +244,7 @@ class MainActivity : Activity() {
         screenScroll.addView(root, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
         root.addView(text("我家女友·甜蜜桌宠", 27f, PALETTE_TITLE, bold = true))
-        root.addView(text("Android 手机陪伴版  v0.5.4", 14f, PALETTE_MUTED).withTop(dp(3)))
+        root.addView(text("Android 手机陪伴版  v0.5.5", 14f, PALETTE_MUTED).withTop(dp(3)))
         root.addView(
             collapsibleSection("运行与模式", "桌面、悬浮窗与权限状态", expanded = true) {
                 addView(buildPermissionNotice())

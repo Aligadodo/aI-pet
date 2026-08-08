@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 2,
+  "tasks": [
+    {
+      "id": "morning-first-class",
+      "title": "第一节课",
+      "prompt": "新的一页开始啦，今天最先要守住的是哪件事？",
+      "action": "wave",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 6, "hourEnd": 10},
+      "options": [
+        {"id": "picked", "label": "已经想好", "response": "很好，我在页角画颗星，陪你把它做完。", "action": "wave"},
+        {"id": "choose", "label": "帮我缩小", "response": "从最重要、最短或最能让你安心的一件开始。", "action": "chalk_explain"},
+        {"id": "later", "label": "稍后决定", "response": "好，先喝水和吃早餐，半小时后再看。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "campus-bag-check",
+      "title": "出门清单",
+      "prompt": "出门前一起检查：钥匙、校园卡、充电量和要交的材料？",
+      "action": "gift_hold",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 6, "hourEnd": 11},
+      "options": [
+        {"id": "ready", "label": "全部带好", "response": "检查通过，格纹包和好心情都可以出发啦。", "action": "wave"},
+        {"id": "check", "label": "现在检查", "response": "慢慢来，按清单一项项放进去最稳妥。", "action": "gift_hold"},
+        {"id": "home", "label": "今天不出门", "response": "收到，那就把桌面整理成舒服的小自习角。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "lecture-keywords",
+      "title": "课堂关键词",
+      "prompt": "听课内容有点多，要不要先抓住三个关键词？",
+      "action": "chalk_explain",
+      "cooldownMinutes": 150,
+      "when": {"hourStart": 8, "hourEnd": 17},
+      "options": [
+        {"id": "three", "label": "记三个词", "response": "先搭骨架，再把例子和细节慢慢填进去。", "action": "chalk_explain"},
+        {"id": "question", "label": "记下疑问", "response": "很好，给疑问留个问号，下课再集中解决。", "action": "glasses_adjust"},
+        {"id": "review", "label": "课后再理", "response": "可以，先做醒目标记，别让它悄悄溜走。", "action": "idle", "snoozeMinutes": 45}
+      ]
+    },
+    {
+      "id": "chalkboard-explain",
+      "title": "黑板小讲堂",
+      "prompt": "把卡住的问题当成一道板书，试着用自己的话讲一遍？",
+      "action": "chalk_explain",
+      "cooldownMinutes": 240,
+      "options": [
+        {"id": "explain", "label": "从头讲一遍", "response": "能讲清开头、过程和结论，理解就更牢啦。", "action": "chalk_explain"},
+        {"id": "example", "label": "先举个例子", "response": "好例子像一盏灯，会把抽象的地方照亮。", "action": "glasses_adjust"},
+        {"id": "park", "label": "先记入疑问簿", "response": "收到，我替你画好问题框，稍后再回来。", "action": "idle", "snoozeMinutes": 30}
+      ]
+    },
+    {
+      "id": "ten-minute-focus",
+      "title": "十分钟自习",
+      "prompt": "挑一件小事，和我一起安静专注十分钟吗？",
+      "action": "walk",
+      "cooldownMinutes": 120,
+      "options": [
+        {"id": "start", "label": "现在开始", "response": "计时开始，我退到边缘陪你，不打断思路。", "action": "walk"},
+        {"id": "tiny", "label": "先做两分钟", "response": "很好，先启动比一次做完更重要。", "action": "idle"},
+        {"id": "later", "label": "二十五分钟后", "response": "好，我把提醒夹进书页，稍后再来。", "action": "idle", "snoozeMinutes": 25}
+      ]
+    },
+    {
+      "id": "assignment-small-step",
+      "title": "作业拆一步",
+      "prompt": "这项任务看起来很大，要不要只拆出下一步？",
+      "action": "glasses_adjust",
+      "cooldownMinutes": 180,
+      "options": [
+        {"id": "outline", "label": "先列提纲", "response": "提纲就是路线图，先不用追求每一格都完美。", "action": "chalk_explain"},
+        {"id": "material", "label": "先找材料", "response": "把资料集中到一个地方，下一步会清楚很多。", "action": "gift_hold"},
+        {"id": "rest", "label": "先休息五分钟", "response": "可以，真正休息五分钟，再回来选第一步。", "action": "grass_rest", "snoozeMinutes": 5}
+      ]
+    },
+    {
+      "id": "distance-eye-break",
+      "title": "望向远处",
+      "prompt": "看屏幕一阵了，陪我望向远处并慢慢眨眼一分钟？",
+      "action": "glasses_adjust",
+      "cooldownMinutes": 60,
+      "options": [
+        {"id": "look", "label": "远眺一分钟", "response": "肩膀放松，视线越过屏幕，慢慢眨几次眼。", "action": "glasses_adjust"},
+        {"id": "walk", "label": "起身走两步", "response": "好，看看真实的光，也让腿脚醒一醒。", "action": "walk"},
+        {"id": "busy", "label": "还在忙", "response": "收到，我先待在边缘，二十分钟后再提醒。", "action": "idle", "snoozeMinutes": 20}
+      ]
+    },
+    {
+      "id": "glasses-care",
+      "title": "眼镜清晰度",
+      "prompt": "镜片是不是有点花？要不要顺手擦干净，也让眼睛休息一下？",
+      "action": "glasses_adjust",
+      "cooldownMinutes": 300,
+      "options": [
+        {"id": "clean", "label": "擦擦镜片", "response": "清晰度恢复，记得用柔软镜布轻轻擦。", "action": "glasses_adjust"},
+        {"id": "fine", "label": "现在很清楚", "response": "收到，那就继续保持舒服的距离和亮度。", "action": "idle"},
+        {"id": "later", "label": "稍后处理", "response": "好，我把小镜布提醒放到十分钟后。", "action": "idle", "snoozeMinutes": 10}
+      ]
+    },
+    {
+      "id": "water-bottle-check",
+      "title": "水杯签到",
+      "prompt": "水杯今天报到几次啦？现在要不要补一口水？",
+      "action": "wave",
+      "cooldownMinutes": 75,
+      "options": [
+        {"id": "drink", "label": "喝一口", "response": "水杯签到成功，慢慢喝，不用一口灌完。", "action": "wave"},
+        {"id": "refill", "label": "去接水", "response": "好，我替你看桌面，回来路上也别着急。", "action": "walk"},
+        {"id": "later", "label": "十分钟再喝", "response": "收到，我先把提醒别在帽檐上。", "action": "idle", "snoozeMinutes": 10}
+      ]
+    },
+    {
+      "id": "lunch-canteen-break",
+      "title": "午间补给",
+      "prompt": "到饭点啦，要不要合上这一页，去好好吃顿饭？",
+      "action": "wave",
+      "cooldownMinutes": 360,
+      "when": {"hourStart": 11, "hourEnd": 13},
+      "options": [
+        {"id": "eat", "label": "这就去吃", "response": "好耶，桌面交给我，你慢慢吃。", "action": "wave"},
+        {"id": "ten", "label": "十分钟后", "response": "可以，但别让午饭被下一件事挤走。", "action": "idle", "snoozeMinutes": 10},
+        {"id": "done", "label": "已经吃好", "response": "那就散两步、喝点水，再回到下午。", "action": "walk"}
+      ]
+    },
+    {
+      "id": "campus-stretch",
+      "title": "草坪伸展",
+      "prompt": "坐久了，陪我像草坪上那样张开手臂、放松肩颈？",
+      "action": "photo_pose",
+      "cooldownMinutes": 120,
+      "options": [
+        {"id": "stretch", "label": "一起伸展", "response": "慢慢抬手，呼吸别憋住，舒服就好。", "action": "photo_pose"},
+        {"id": "walk", "label": "走两步", "response": "好，脚踝也活动一下，我们小步出发。", "action": "walk"},
+        {"id": "done", "label": "刚活动过", "response": "收到，继续保持肩膀放松和坐姿舒服。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "grass-five-minute-rest",
+      "title": "草坪休息",
+      "prompt": "抱着膝盖坐一会儿吧，给大脑五分钟真正的空白？",
+      "action": "grass_rest",
+      "cooldownMinutes": 180,
+      "options": [
+        {"id": "rest", "label": "休息五分钟", "response": "不用刷消息，只听呼吸和周围的声音就好。", "action": "grass_rest"},
+        {"id": "breath", "label": "做三次呼吸", "response": "吸气、停一下、慢慢呼气，把肩膀放下来。", "action": "grass_rest"},
+        {"id": "later", "label": "完成这段再休息", "response": "好，二十分钟后我再铺好这块小草坪。", "action": "idle", "snoozeMinutes": 20}
+      ]
+    },
+    {
+      "id": "shaded-campus-stroll",
+      "title": "林荫小路",
+      "prompt": "不赶时间，陪我沿着屏幕边走一段林荫路吗？",
+      "action": "walk",
+      "cooldownMinutes": 240,
+      "options": [
+        {"id": "go", "label": "慢慢散步", "response": "出发，小步一点，沿途才看得清。", "action": "walk"},
+        {"id": "edge", "label": "只在边缘走", "response": "收到，我贴着屏幕边，不碰你的内容。", "action": "walk"},
+        {"id": "rest", "label": "今天原地休息", "response": "也好，停下来看看树影同样是散步。", "action": "grass_rest"}
+      ]
+    },
+    {
+      "id": "autumn-leaf-bookmark",
+      "title": "梧桐叶书签",
+      "prompt": "这片秋叶颜色刚刚好，要不要把它做成今天的书签？",
+      "action": "autumn_leaf",
+      "cooldownMinutes": 420,
+      "when": {"weatherIn": ["clear", "cloudy"]},
+      "options": [
+        {"id": "save", "label": "夹进书里", "response": "收好啦，它负责记住今天认真读过的这一页。", "action": "autumn_leaf"},
+        {"id": "photo", "label": "先拍一张", "response": "咔嚓，叶脉和你的笑都被阳光照清楚啦。", "action": "photo_pose"},
+        {"id": "return", "label": "留在路边", "response": "好，让它继续陪校园的秋风旅行。", "action": "walk"}
+      ]
+    },
+    {
+      "id": "campus-flower-spot",
+      "title": "发现小花",
+      "prompt": "路边藏着几朵小花，要不要停下来认真看一眼？",
+      "action": "flower_spot",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "look", "label": "蹲下看看", "response": "发现成功，只观察不采摘，也能把美好带走。", "action": "flower_spot"},
+        {"id": "photo", "label": "拍下它们", "response": "镜头放低一点，小花也有自己的校园视角。", "action": "photo_pose"},
+        {"id": "name", "label": "猜猜名字", "response": "先记下颜色和叶形，之后再查也很有趣。", "action": "glasses_adjust"}
+      ]
+    },
+    {
+      "id": "knitted-gift",
+      "title": "毛线花礼物",
+      "prompt": "我抱着一束紫色毛线花，你愿意收下今天的份吗？",
+      "action": "gift_hold",
+      "cooldownMinutes": 720,
+      "options": [
+        {"id": "accept", "label": "收下花花", "response": "送给今天努力过的你，它永远不会蔫。", "action": "gift_hold"},
+        {"id": "share", "label": "一起抱着", "response": "那我们一人抱一边，把好心情夹在中间。", "action": "photo_pose"},
+        {"id": "desk", "label": "放在桌角", "response": "摆好啦，它会替我安静给你加油。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "airplane-balance-photo",
+      "title": "草坪纪念照",
+      "prompt": "张开手臂像小飞机一样，来拍一张校园纪念照？",
+      "action": "photo_pose",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "pose", "label": "小飞机姿势", "response": "三、二、一——稳住，笑容和蓝天都进镜头啦。", "action": "photo_pose"},
+        {"id": "wave", "label": "挥手抓拍", "response": "咔嚓，帽檐下的校园问候已经保存。", "action": "wave"},
+        {"id": "later", "label": "下次再拍", "response": "没关系，校园里还会有很多好光线。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "campus-shuttle-choice",
+      "title": "校园路线",
+      "prompt": "下一段路想慢慢走，还是搭一程校园接驳？",
+      "action": "walk",
+      "cooldownMinutes": 360,
+      "options": [
+        {"id": "walk", "label": "走林荫路", "response": "好，留足时间，小步走也不必赶。", "action": "walk"},
+        {"id": "shuttle", "label": "等接驳车", "response": "那就到安全位置等候，上下车记得看路。", "action": "wave"},
+        {"id": "stay", "label": "暂时不移动", "response": "收到，我们先在原地确认下一站。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "rainy-campus-route",
+      "title": "雨天路线",
+      "prompt": "外面有雨，出门前要不要确认雨伞和防滑路线？",
+      "action": "gift_hold",
+      "cooldownMinutes": 300,
+      "when": {"weatherIn": ["rain", "storm"]},
+      "options": [
+        {"id": "ready", "label": "雨具齐全", "response": "准备完成，台阶和光滑地面都慢慢走。", "action": "wave"},
+        {"id": "wait", "label": "等雨小些", "response": "好，先在安全室内等一会儿。", "action": "grass_rest", "snoozeMinutes": 20},
+        {"id": "indoor", "label": "改成室内安排", "response": "灵活改路线很聪明，安全比打卡更重要。", "action": "chalk_explain"}
+      ]
+    },
+    {
+      "id": "windy-hat-check",
+      "title": "帽檐防风",
+      "prompt": "风有点大，帽子、背包带和随身小物都拿稳了吗？",
+      "action": "glasses_adjust",
+      "cooldownMinutes": 300,
+      "when": {"weatherIn": ["windy"]},
+      "options": [
+        {"id": "secure", "label": "都拿稳了", "response": "安全检查完成，迎风走路也别跑太急。", "action": "glasses_adjust"},
+        {"id": "indoors", "label": "暂不出门", "response": "好选择，今天在窗边听风就够啦。", "action": "grass_rest"}
+      ]
+    },
+    {
+      "id": "hot-day-shade",
+      "title": "晴热降温",
+      "prompt": "天气偏热时别硬撑，要不要去阴凉处补水休息？",
+      "action": "grass_rest",
+      "cooldownMinutes": 180,
+      "when": {"hourStart": 10, "hourEnd": 17, "weatherIn": ["hot"]},
+      "options": [
+        {"id": "cool", "label": "去阴凉处", "response": "好，慢慢喝水，让体感先舒服下来。", "action": "grass_rest"},
+        {"id": "indoor", "label": "我在室内", "response": "收到，也别让空调风一直对着自己吹。", "action": "idle"},
+        {"id": "later", "label": "十五分钟后", "response": "那我带着水杯提醒稍后再来。", "action": "idle", "snoozeMinutes": 15}
+      ]
+    },
+    {
+      "id": "cold-day-layer",
+      "title": "降温添衣",
+      "prompt": "外面偏冷，卫衣外面要不要再加一层？",
+      "action": "gift_hold",
+      "cooldownMinutes": 360,
+      "when": {"weatherIn": ["cold", "snow"]},
+      "options": [
+        {"id": "layer", "label": "加件外套", "response": "暖和最重要，别等走远了才发现风很凉。", "action": "gift_hold"},
+        {"id": "enough", "label": "现在够暖", "response": "收到，按实际体感调整就好。", "action": "wave"},
+        {"id": "stay", "label": "今天少出门", "response": "好，我们把活动换成舒服的室内版本。", "action": "grass_rest"}
+      ]
+    },
+    {
+      "id": "evening-campus-review",
+      "title": "今日三格",
+      "prompt": "今天有没有一件完成、一件学到和一件想感谢的小事？",
+      "action": "autumn_leaf",
+      "cooldownMinutes": 720,
+      "when": {"hourStart": 18, "hourEnd": 22},
+      "options": [
+        {"id": "three", "label": "写下三格", "response": "收好啦，认真回顾会让普通一天变得清晰。", "action": "autumn_leaf"},
+        {"id": "one", "label": "只写一件", "response": "一件也足够，今天的努力不是理所当然。", "action": "gift_hold"},
+        {"id": "hard", "label": "今天有点难", "response": "难的一天也走到了这里，这已经很了不起。", "action": "grass_rest"}
+      ]
+    },
+    {
+      "id": "late-study-close",
+      "title": "自习室收尾",
+      "prompt": "夜深啦，要不要保存进度、写下明天第一步，然后合上这一页？",
+      "action": "sleep",
+      "cooldownMinutes": 480,
+      "when": {"hourStart": 22, "hourEnd": 3},
+      "options": [
+        {"id": "sleep", "label": "准备休息", "response": "晚安，我把屏幕边的灯调暗，陪你到下课。", "action": "sleep"},
+        {"id": "five", "label": "收尾五分钟", "response": "好，只保存和整理，不再开启新章节。", "action": "idle", "snoozeMinutes": 5},
+        {"id": "quiet", "label": "安静陪我", "response": "嗯，我抱着书不说话，等你慢慢收好。", "action": "sleep"}
+      ]
+    },
+    {
+      "id": "jump-cheer-completion",
+      "title": "完成庆祝",
+      "prompt": "完成一个阶段啦，要不要在草坪上跳一下庆祝？",
+      "action": "jump_celebrate",
+      "cooldownMinutes": 300,
+      "options": [
+        {"id": "jump", "label": "三二一，跳", "response": "成功！这次完成值得一个完整的空中笑容。", "action": "jump_celebrate"},
+        {"id": "photo", "label": "抓拍庆祝", "response": "咔嚓，努力落地之前已经被好好保存。", "action": "photo_pose"},
+        {"id": "quiet", "label": "轻轻击掌", "response": "啪——安静的庆祝也很有分量。", "action": "wave"}
+      ]
+    },
+    {
+      "id": "campus-gravity-invite",
+      "title": "重力草坪",
+      "prompt": "轻轻倾斜手机，看看重力会把我带向哪一块屏幕草坪？",
+      "action": "photo_pose",
+      "cooldownMinutes": 420,
+      "options": [
+        {"id": "play", "label": "开始重力模式", "response": "重力感应就位，记得在屏幕边缘稳稳接住我！", "action": "jump_celebrate", "playMode": "GRAVITY"},
+        {"id": "skip", "label": "先不倾斜", "response": "好，我在原地站稳，帽子也不会掉。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "campus-border-walk-invite",
+      "title": "边框林荫路",
+      "prompt": "要不要把四条屏幕边框变成一圈校园林荫路？",
+      "action": "walk",
+      "cooldownMinutes": 420,
+      "options": [
+        {"id": "play", "label": "沿边散步", "response": "出发，我会顺着四条边和转角稳稳走。", "action": "walk", "playMode": "BORDER_WALK"},
+        {"id": "skip", "label": "原地看树影", "response": "也好，风景不会因为停下就消失。", "action": "grass_rest"}
+      ]
+    },
+    {
+      "id": "campus-border-run-invite",
+      "title": "赶课跑一圈",
+      "prompt": "上课铃沿着屏幕边跑过去啦，要和我追一圈吗？",
+      "action": "run",
+      "cooldownMinutes": 480,
+      "options": [
+        {"id": "play", "label": "追上铃声", "response": "开跑！我会让脚底贴住每一段屏幕边。", "action": "run", "playMode": "BORDER_RUN"},
+        {"id": "walk", "label": "换成慢走", "response": "没问题，赶不上也不冒险，舒服最重要。", "action": "walk", "playMode": "BORDER_WALK"},
+        {"id": "skip", "label": "下次再跑", "response": "好，我先把鞋带和路线都准备好。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "campus-hide-seek-invite",
+      "title": "校园捉迷藏",
+      "prompt": "回到主页后，我要躲进空白的校园角落，你能找到我吗？",
+      "action": "photo_pose",
+      "cooldownMinutes": 540,
+      "options": [
+        {"id": "play", "label": "开始找你", "response": "请回到主页，我先按住帽子跑去藏好啦！", "action": "run", "playMode": "HIDE_SEEK"},
+        {"id": "skip", "label": "下次再找", "response": "好，最佳藏身点继续保密。", "action": "autumn_leaf"}
+      ]
+    },
+    {
+      "id": "chalk-bomber-invite",
+      "title": "粉笔路线战",
+      "prompt": "黑板迷宫里出现了粉笔泡泡，要一起规划安全路线吗？",
+      "action": "chalk_explain",
+      "cooldownMinutes": 600,
+      "options": [
+        {"id": "play", "label": "进入黑板迷宫", "response": "开始寻路！只操作游戏拟态元素，真实桌面不会改变。", "action": "run", "playMode": "BOMBER"},
+        {"id": "plan", "label": "先看路线", "response": "先找出口和转角，再决定第一步往哪边走。", "action": "chalk_explain"},
+        {"id": "skip", "label": "今天和平板书", "response": "好，今天只写知识点，不放粉笔泡泡。", "action": "idle"}
+      ]
+    },
+    {
+      "id": "leaf-snake-invite",
+      "title": "小叶子收集队",
+      "prompt": "让头像沿校园路收集拟态叶片，再把它们全部还原吗？",
+      "action": "autumn_leaf",
+      "cooldownMinutes": 600,
+      "options": [
+        {"id": "play", "label": "开始收集", "response": "出发！真实图标不会移动，抓住头像即可结束。", "action": "run", "playMode": "SNAKE"},
+        {"id": "photo", "label": "只拍叶子", "response": "也好，让每片秋叶留在自己的位置上。", "action": "photo_pose"},
+        {"id": "skip", "label": "下次再玩", "response": "收到，我先把收集袋折好放回桌角。", "action": "gift_hold"}
+      ]
+    }
+  ]
+}

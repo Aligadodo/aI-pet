@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "daily": {
+      "idleWeight": 40,
+      "walkWeight": 28,
+      "runWeight": 10,
+      "socialWeight": 22
+    },
+    "sweet": {
+      "idleWeight": 26,
+      "walkWeight": 20,
+      "runWeight": 10,
+      "socialWeight": 44
+    },
+    "quiet": {
+      "idleWeight": 80,
+      "walkWeight": 14,
+      "runWeight": 1,
+      "socialWeight": 5
+    }
+  },
+  "fallbackAction": "idle",
+  "manualPlacementRestSeconds": 420
+}

@@ -7,7 +7,7 @@
     "outputRoot": "outputs/pipeline"
   },
   "versions": {
-    "android": "0.5.4",
+    "android": "0.5.5",
     "desktop": "1.2.4"
   },
   "profiles": {
@@ -59,6 +59,11 @@
           "location": "shell_pick"
         }
       ]
+    },
+    "nju-campus-girlfriend": {
+      "path": "packs/nju-campus-girlfriend",
+      "qaByDefault": true,
+      "acceptedWarnings": []
     }
   }
 }

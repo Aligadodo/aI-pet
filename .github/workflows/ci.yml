@@ -51,12 +51,16 @@ jobs:
           python-version: '3.11'
       - name: Install QA dependencies
         run: python -m pip install Pillow==12.2.0 numpy==2.4.6
+      - name: Verify bundled packs match their authoritative sources
+        env:
+          SWEETPET_REQUIRE_CAMPUS_BUNDLE: '1'
+        run: python "$GITHUB_WORKSPACE/scripts/test_bundled_pack_assets.py"
       - name: Test tools, validate every pack, and run exact-warning QA
         env:
           SWEETPET_RUN_ID: ci-petpack-${{ github.run_id }}-${{ github.run_attempt }}
         run: >-
           python "$GITHUB_WORKSPACE/scripts/sweetpet.py" iterate
-          --profile ci --component petpack --pack jk-beach-summer
+          --profile ci --component petpack
           --run-id "$SWEETPET_RUN_ID"
       - name: Add pipeline summary
         if: always()

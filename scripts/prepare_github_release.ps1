@@ -130,7 +130,7 @@ Get-ChildItem -LiteralPath $androidRoot -Directory |
                     '.petpack' { 'petpack-snapshot' }
                     default { 'checksum' }
                 }
-                $status = if ($version -eq 'v0.5.4') { 'current-qa' } else { 'historical-qa' }
+                $status = if ($version -eq 'v0.5.5') { 'current-qa' } else { 'historical-qa' }
                 $note = if ($_.Extension -eq '.apk') { 'Debug-signed QA APK; not a production/store signature' } else { 'Android iteration delivery artifact' }
                 Add-Candidate -Path $_.FullName -Kind $kind -Version $version.TrimStart('v') -Status $status -Note $note
             }

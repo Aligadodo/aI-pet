@@ -5,7 +5,7 @@
 ## 仓库结构
 
 - `desktop/SweetGirlfriendDesktopPet`：Windows 桌面端 v1.2.4 权威源码与动作资源。
-- `android/SweetGirlfriendPetAndroid`：Android v0.5.4 权威源码。目录沿用早期工作区名称，但应用版本以 Gradle 配置为准。
+- `android/SweetGirlfriendPetAndroid`：Android v0.5.5 权威源码。目录沿用早期工作区名称，但应用版本以 Gradle 配置为准。
 - `petpack/PetPack-v2`：PetPack v2 协议、schema、模板、制作/质量门禁工具、资源包源码与正式 QA 报告。
 - `docs`：发布架构和制品索引。
 
@@ -67,15 +67,15 @@ py -m venv .venv
 ## 自动化质量门禁
 
 - Windows 本地统一入口为 `scripts/sweetpet.cmd doctor|iterate|pack|deploy|intake|status`；它不依赖 PowerShell 脚本执行策略。`sweetpet.ps1` 保留为可选入口。运行记录集中在 `outputs/pipeline/<run-id>`，可用 `status <run-id>` 回看。
-- `Source and protocol CI` 会在提交和拉取请求中运行 Android JVM 测试与 Lint、PetPack 工具测试/全包校验，以及 Windows 桌面端测试。
+- `Source and protocol CI` 会在提交和拉取请求中运行 Android JVM 测试与 Lint、PetPack 工具测试/全包校验、三套内置资源包与权威源码的逐文件 SHA-256 一致性测试，以及 Windows 桌面端测试。
 - `PetPack Android install gate` 会在资源包或 Android 运行时变更的拉取请求中启动 API 35 模拟器，执行 Vivo `Invalid column last modified` 兼容回归、资源包预检、安装、重复安装和冷加载验证。
 - 正式 `.petpack` 只能来自 `pack publish`；`pack candidate` 和单纯压缩目录都不属于可发布制品。只有 `publish --promote` 会更新 canonical dist。
 
 ## 发布状态
 
-- Android：v0.5.4，`versionCode 9`，用于当前测试迭代的 APK 为 Android Debug 签名。
+- Android：v0.5.5，`versionCode 10`，用于当前测试迭代的 APK 为 Android Debug 签名，并内置经典汉服、JK 海边夏日和南大校园三套资源包。
 - Windows：v1.2.4。
-- PetPack：`girlfriend-classic` v1.2.1、`jk-beach-summer` v1.0.0。
+- PetPack：`girlfriend-classic` v1.2.1、`jk-beach-summer` v1.0.0、`nju-campus-girlfriend` v1.0.0。
 
 本仓库不包含用户提供的原始摄影 JPG、开发机 SDK 路径、虚拟环境、构建缓存、临时复现包或签名私钥。
 

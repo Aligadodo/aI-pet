@@ -1,6 +1,8 @@
 {
   "schemaVersion": 1,
   "packs": [
-    "girlfriend-classic"
+    "girlfriend-classic",
+    "jk-beach-summer",
+    "nju-campus-girlfriend"
   ]
 }
